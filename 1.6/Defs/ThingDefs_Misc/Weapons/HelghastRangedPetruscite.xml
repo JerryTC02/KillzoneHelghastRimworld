@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <ThingDef ParentName="HelghastBaseHumanMakeableGun">
+    <defName>Gun_HG_VC39g</defName>
+    <label>VC39 Accelerator Rifle</label>
+    <description>One of the earlier and more successful prototypes in the Helghan charged weaponry program, the VC-39 was still considered extremely expensive and hard to produce by manufacturers, especially within successor states. Visari Corporation never stopped producing the armament however, and now discerning snipers across the helghan diaspora seek this weapon out. Forgoing traditional gas operated slugs, this is a true charge weapon, assembled to the exacting specifications of Visari-Corp and battle tested, even on Helghan itself during her final years. Early problems with jamming and battery life have been resolved through iterative improvements. It does not possess the same raw stopping power as an anti-materiel rifle, and its range is slightly low for a spacer-tier sniper, but its high accuracy burst fire system guarantees multiple hits on target per trigger pull, making this a much loved weapon by snipers on the move attached to frontline infantry. For isolated squads, the drawbacks of a high cost and slow manufacture time are low prices to pay.</description>
+	<techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Helghast/Weapons/VC39</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+	<equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>ChargedShot</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>7</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+      <displayPriority>1201</displayPriority>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>51500</WorkToMake>
+      <Mass>5</Mass>
+      <AccuracyTouch>0.45</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.85</AccuracyMedium>
+      <AccuracyLong>0.85</AccuracyLong>
+      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Plasteel>50</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+      <Steel>50</Steel>
+      <ComponentIndustrial>7</ComponentIndustrial>
+    </costList>
+    <weaponTags>
+	 <li>HelghastSniper</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_HelghastChargeRifle</defaultProjectile>
+        <warmupTime>2.5</warmupTime>
+        <range>44.9</range>
+		<burstShotCount>3</burstShotCount>
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>2.2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_HelghastChargeRifle</defName>
+    <label>accelerated shot</label>
+    <graphicData>
+      <texPath>Things/Projectile/HG_PetrusciteBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>13</damageAmountBase>
+      <armorPenetrationBase>0.30</armorPenetrationBase>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+  
+  <DamageDef>
+    <defName>HG_Arc</defName>
+    <workerClass>FleshTypeFilter.DamageWorker_FleshTypeDamage</workerClass>
+    <label>arc</label>
+    <hasForcefulImpact>false</hasForcefulImpact>
+    <makesBlood>false</makesBlood>
+    <canInterruptJobs>false</canInterruptJobs>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has burned to death.</deathMessage>
+    <hediff>Burn</hediff>
+    <armorCategory>Heat</armorCategory>
+    <minDamageToFragment>15</minDamageToFragment>
+    <defaultDamage>10</defaultDamage>
+    <defaultArmorPenetration>0</defaultArmorPenetration>
+	<buildingDamageFactorImpassable>0.8</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>0.8</buildingDamageFactorPassable>
+    <explosionHeatEnergyPerCell>15</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastEMP</explosionCellFleck>
+    <explosionColorCenter>(1, 0.7, 0.7)</explosionColorCenter>
+    <explosionColorEdge>(1, 1, 0.7)</explosionColorEdge>
+    <soundExplosion>Explosion_EMP</soundExplosion>
+    <combatLogRules>Damage_Flame</combatLogRules>
+    <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+    <scaleDamageToBuildingsBasedOnFlammability>true</scaleDamageToBuildingsBasedOnFlammability>
+	    <modExtensions>
+			<li Class="FleshTypeFilter.DefModExtension_FleshtypeFilter">
+                <FleshTypeFilters>
+                    <li>
+                        <fleshTypeDef>Normal</fleshTypeDef>
+                    </li>
+                    <li>
+                        <fleshTypeDef>Mechanoid</fleshTypeDef>
+                        <armorPenetration>2.00</armorPenetration>
+                    </li>
+                    <li>
+                        <fleshTypeDef>Insectoid</fleshTypeDef>
+                    </li>
+                </FleshTypeFilters>
+            </li>
+        </modExtensions>
+  </DamageDef>
+  
+  <ThingDef ParentName="HelghastBaseHumanMakeableGun">
+    <defName>Gun_HG_VC5rifle</defName>
+    <label>VC5 Arc Rifle</label>
+    <description>Produced in secrecy during the war under the misleading name of 'Arc Welder', this rifle is the end result of experimentation from the Visari Corporation into electrical petruscite weaponry that began with the success of the TR-X Teslite. Using similar principles, it harnesses petruscite to create a controlled catalytic charge along magnetic wire to direct bolts of raw electricity through the air and at targets. The range is somewhat low, but it results in the same stunning and EMP behavior of the Teslite grenade. Ultimately, the Visari Corporation ruled that while the weapon was a success, it fulfilled no tactical role on the battlefield, and was expensive compared to practical solutions. The arc technology would be later scaled up to more devastating effect as a defensive emplacement.</description>
+	<techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Helghast/Weapons/VC5rifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.25</drawSize>
+    </graphicData>
+    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>ChargedShot</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>7</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+      <displayPriority>1202</displayPriority>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>34500</WorkToMake>
+      <Mass>6</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.95</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.75</AccuracyLong>
+      <RangedWeapon_Cooldown>2.30</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>50</Steel>
+	  <Uranium>20</Uranium>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+	<weaponTags>
+	 <li>HGArcRifle</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_HG_Arcrifle</defaultProjectile>
+        <warmupTime>1.8</warmupTime>
+        <range>20.9</range>
+        <soundCast>Shot_HG_ArcRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_HG_Arcrifle</defName>
+    <label>Arc Lightning</label>
+    <graphicData>
+      <texPath>Things/Projectile/HG_Arcrifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>HG_Arc</damageDef>
+      <damageAmountBase>5</damageAmountBase>
+      <stoppingPower>1</stoppingPower>
+      <speed>1000</speed>
+	  <armorPenetrationBase>0.45</armorPenetrationBase>
+	  <extraDamages>
+       <li>
+        <def>Stun</def>
+        <amount>5</amount>
+       </li>
+	   <li>
+        <def>EMP</def>
+        <amount>5</amount>
+       </li>
+      </extraDamages>
+    </projectile>
+	    <thingClass>taranchuk_lasers.LaserProjectile</thingClass>
+	    <modExtensions>
+            <li Class="taranchuk_lasers.LaserProperties">
+                <damageTickRate>15</damageTickRate>
+                <lifetimeTicks>60</lifetimeTicks>
+                <beamWidth>0.25</beamWidth>
+                <beamWidthDrawScale>4.5</beamWidthDrawScale>
+                <sweepRatePerTick>0</sweepRatePerTick>
+                <maxSweepAngle>0</maxSweepAngle>
+                <damageThingsAcrossBeamLine>false</damageThingsAcrossBeamLine>
+                <debugCells>false</debugCells>
+				<groundFleckDef>Fleck_BeamBurn</groundFleckDef>
+                <endEffecterDef>GraserBeam_End</endEffecterDef>
+                <fleckChancePerTick>0.32</fleckChancePerTick>
+                <textureScrollOffsetPerTick>(0, -0.03)</textureScrollOffsetPerTick>
+                <lockOnTarget>false</lockOnTarget>
+				<maxChainTargets>2</maxChainTargets>
+                <chainDamageFalloff>0.75</chainDamageFalloff>
+				<branchChance>1</branchChance>
+                <maxBranches>2</maxBranches>
+                <branchToSameTargets>false</branchToSameTargets>
+                <chainAllowFriendlyFire>false</chainAllowFriendlyFire>
+                <chainToAnything>False</chainToAnything>
+                <chainRange>3</chainRange>
+                <chainDelayTicks>3</chainDelayTicks>
+            </li>
+        </modExtensions>
+  </ThingDef>
+  
+  <ThingDef ParentName="HelghastBaseHumanMakeableGun">
+    <defName>Gun_HG_VC5Array</defName>
+    <label>VC5 Super Arc Array</label>
+    <description>A very limited-run item, created a handful of times prior to the loss of Helghan, the Arc Array was actually an upscaled series of VC5 Arc Rifles affixed to modified heavy industrial equipment to create a 'heavy' version of the rifle for power armor units. The design intention was to create a potent anti drone/anti tank hardkill system that would neutralize vehicle crew and shut down internal electronics, in testing, this goal wasnt always achieved- variable hull density, electronic grounding, and other factors ensured that its intended role as an AT system was pushed to the side in development. That said, like all Arc weapons, it was found to be highly potent against infantry targets,The VC5 array can bypass traditional electrical proofing on infantry armor like rubberised suits and fry the target to a crisp. Surviving a blast from the VC5 has a stunning, disorienting effect on the human body that ensures the target is an easy mark. Its main drawback was always its somewhat low range, particularly for this heavy of a weapon. It is an excellent killing machine in all other respects, except perhaps its high cost to manufacture, Helghast successor states occasionally deploy them in the hands of their 'heavy' troopers to help take down hard targets in close.</description>
+	<techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Helghast/Weapons/VC5Array</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.4</drawSize>
+    </graphicData>
+    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <equippedAngleOffset>45</equippedAngleOffset>
+    <recipeMaker>
+      <researchPrerequisite>ChargedShot</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+      <displayPriority>1203</displayPriority>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>62500</WorkToMake>
+      <Mass>15</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.95</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.75</AccuracyLong>
+      <RangedWeapon_Cooldown>3.00</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>125</Steel>
+	  <Plasteel>50</Plasteel>
+	  <Uranium>35</Uranium>
+      <ComponentIndustrial>10</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+	<weaponTags>
+	 <li>HelghastHeavyHEAVY</li>
+    </weaponTags>
+    <verbs>
+	  <li Class="BM_HeavyWeapon.VerbProperties_ApparelAmmo">
+        <verbClass>BM_HeavyWeapon.Verb_Shoot_ApparelAmmo</verbClass>
+		<apparelList>
+			<li>Apparel_HG_HeaviestHeavy</li>
+		</apparelList>
+		<missingReason>Missing armor. Equip it first.</missingReason>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_HG_Arcarray</defaultProjectile>
+        <warmupTime>2</warmupTime>
+        <range>22.9</range>
+        <soundCast>Shot_HG_ArcRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_HG_Arcarray</defName>
+    <label>Arc Lightning</label>
+    <graphicData>
+      <texPath>Things/Projectile/HG_ArcArray</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>HG_Arc</damageDef>
+      <damageAmountBase>9</damageAmountBase>
+      <stoppingPower>1</stoppingPower>
+      <speed>1000</speed>
+	  <armorPenetrationBase>0.65</armorPenetrationBase>
+	  <extraDamages>
+       <li>
+        <def>Stun</def>
+        <amount>10</amount>
+       </li>
+	   <li>
+        <def>EMP</def>
+        <amount>8</amount>
+       </li>
+      </extraDamages>
+    </projectile>
+	    <thingClass>taranchuk_lasers.LaserProjectile</thingClass>
+	    <modExtensions>
+            <li Class="taranchuk_lasers.LaserProperties">
+                <damageTickRate>15</damageTickRate>
+                <lifetimeTicks>60</lifetimeTicks>
+                <beamWidth>0.25</beamWidth>
+                <beamWidthDrawScale>4.5</beamWidthDrawScale>
+                <sweepRatePerTick>0</sweepRatePerTick>
+                <maxSweepAngle>0</maxSweepAngle>
+                <damageThingsAcrossBeamLine>false</damageThingsAcrossBeamLine>
+                <debugCells>false</debugCells>
+				<groundFleckDef>Fleck_BeamBurn</groundFleckDef>
+                <endEffecterDef>GraserBeam_End</endEffecterDef>
+                <fleckChancePerTick>0.32</fleckChancePerTick>
+                <textureScrollOffsetPerTick>(0, -0.02)</textureScrollOffsetPerTick>
+                <lockOnTarget>false</lockOnTarget>
+				<maxChainTargets>2</maxChainTargets>
+                <chainDamageFalloff>0.75</chainDamageFalloff>
+				<branchChance>1</branchChance>
+                <maxBranches>3</maxBranches>
+                <branchToSameTargets>false</branchToSameTargets>
+                <chainAllowFriendlyFire>false</chainAllowFriendlyFire>
+                <chainToAnything>False</chainToAnything>
+                <chainRange>5</chainRange>
+                <chainDelayTicks>3</chainDelayTicks>
+            </li>
+        </modExtensions>
+  </ThingDef>
+  
+  <ThingDef ParentName="HelghastBaseHumanMakeableGun">
+    <defName>Gun_HG_StA5X</defName>
+    <label>StA-5X Arc Cannon</label>
+    <description>Stahl Arms' most advanced tech to date, the Arc Cannon was developed as part of the Stahl Petruscite weapons development program, it is a short range atomic obliterator that violently rips apart any target caught in the blast. Its primary weaknesses is that it demands the user stand fairly close to their target and the exceedingly high cost. Arc Cannons are not standard issue to any soldier in the armed forces- they are unique, bespoke creations handed out usually to trusted elite units within Stahl Arms itself.</description>
+	<techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Helghast/Weapons/VC5Cannon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.25</drawSize>
+    </graphicData>
+    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>ChargedShot</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+      <displayPriority>1204</displayPriority>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>72500</WorkToMake>
+      <Mass>10</Mass>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.50</AccuracyLong>
+      <RangedWeapon_Cooldown>2.75</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>125</Steel>
+	  <Plasteel>75</Plasteel>
+	  <Uranium>25</Uranium>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <ComponentSpacer>5</ComponentSpacer>
+    </costList>
+	<weaponTags>
+	 <li>HelghastBFG</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_HG_ArcCannon</defaultProjectile>
+        <warmupTime>2.25</warmupTime>
+        <range>18.9</range>
+        <soundCast>Shot_HG_ArcCannon</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <FleckDef ParentName="FleckBase">
+    <defName>HG_Arc_CannonFleck</defName>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <fadeInTime>0.04</fadeInTime>
+    <solidTime>0.0</solidTime>
+    <fadeOutTime>0.14</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Projectile/HG_ArcCannon_Beam</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(1,1)</drawSize>
+      <color>(150,150,150)</color>
+    </graphicData>
+  </FleckDef>
+
+  <ThingDef ParentName="BaseBullet">
+        <defName>Bullet_HG_ArcCannon</defName>
+        <label>Arc Bomb</label>
+        <description>Arc Blast</description>
+        <thingClass>ProjectileSFX.Mst_BezierProjectile_Explosive</thingClass>
+        <drawOffscreen>true</drawOffscreen>
+        <seeThroughFog>true</seeThroughFog>
+        <graphicData>
+            <texPath>Things/Projectile/HG_ArcCannon_Shot</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+            <drawSize>(1,1.25)</drawSize>
+        </graphicData>
+        <projectile>
+         <damageDef>HG_Arc_Bomb</damageDef>
+	     <damageAmountBase>25</damageAmountBase>
+		 <explosionRadius>1.9</explosionRadius >
+         <speed>30</speed>
+		    <explosionDelay>30</explosionDelay>
+		    <landedEffecter>AOC_ArcImplodeShockwave</landedEffecter>
+            <explosionEffect>AOC_ArcImplodeLanded</explosionEffect>
+        </projectile>
+    <comps>
+    </comps>
+    <modExtensions>
+      <li Class="ProjectileSFX.ModExt_Mst_BezierProjectile">
+        <drawStartDelay>1</drawStartDelay>
+        <trailFleckDef>HG_Arc_CannonFleck</trailFleckDef>
+        <trailThickness>0.75</trailThickness>
+        <probeStep>0.05</probeStep> 
+        <useCubieCurve>true</useCubieCurve>
+        <enableRandomSide>true</enableRandomSide>
+        <randomSideChance>0</randomSideChance>
+        <randOffsetRange>
+          <min>0</min>
+          <max>0</max>
+        </randOffsetRange>
+        <P1Offset>0</P1Offset>
+        <P1Side>0</P1Side>
+        <P2Offset>0</P2Offset>
+        <P2Side>0</P2Side>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  
+  <DamageDef>
+        <defName>HG_Arc_Bomb</defName>
+        <label>arc bomb</label>
+        <workerClass>DamageWorker_AddInjury</workerClass>
+        <externalViolence>true</externalViolence>
+        <isExplosive>true</isExplosive>
+        <deathMessage>{0} has died in an explosion.</deathMessage>
+        <hediff>Shredded</hediff>
+        <hediffSolid>Crack</hediffSolid>
+        <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+        <impactSoundType>Blunt</impactSoundType>
+        <armorCategory>Heat</armorCategory>
+        <minDamageToFragment>15</minDamageToFragment>
+        <defaultDamage>50</defaultDamage>
+        <defaultStoppingPower>0.5</defaultStoppingPower>
+        <defaultArmorPenetration>0.20</defaultArmorPenetration>
+        <buildingDamageFactorImpassable>2</buildingDamageFactorImpassable>
+        <buildingDamageFactorPassable>1.5</buildingDamageFactorPassable>
+        <plantDamageFactor>8</plantDamageFactor>
+        <corpseDamageFactor>1</corpseDamageFactor>
+        <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+        <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+        <soundExplosion>Explosion_EMP</soundExplosion>
+        <combatLogRules>Damage_Bomb</combatLogRules>
+    </DamageDef>
+  
+  <EffecterDef>
+        <defName>AOC_ArcImplodeLanded</defName>
+        <children>
+            <li>
+                <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+                <fleckDef>AOC_ShockwaveImplode</fleckDef>
+                <burstCount>1</burstCount>
+                <spawnLocType>OnSource</spawnLocType>
+                <scale>2</scale>
+                <positionOffset>(0, 0, 0)</positionOffset>
+            </li>
+        </children>
+    </EffecterDef>
+
+  <EffecterDef>
+        <defName>AOC_ArcImplodeShockwave</defName>
+        <children>
+            <li>
+                <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+                <fleckDef>AOC_ShockwaveBlast</fleckDef>
+                <burstCount>4</burstCount>
+                <spawnLocType>OnSource</spawnLocType>
+                <scale>1</scale>
+                <rotationRate>-200~200</rotationRate>
+                <positionOffset>(0, 0, 0)</positionOffset>
+            </li>
+            <li>
+                <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+                <burstCount>10</burstCount>
+                <positionOffset>(0, 0, 0)</positionOffset>
+                <ticksBetweenMotes>30</ticksBetweenMotes>
+                <fleckDef>AOC_ShockwaveImplodeFixed</fleckDef>
+                <scale>.8~1.2</scale>
+                <positionRadius>0</positionRadius>
+                <positionRadiusMin>0</positionRadiusMin>
+                <speed>-10~10</speed>
+                <rotation>0</rotation>
+                <rotationRate>-200~200</rotationRate>
+                <angle>0~0</angle>
+                <orbitOrigin>true</orbitOrigin>
+                <orbitSpeed>-5~-1</orbitSpeed>
+                <orbitSnapStrength>.4</orbitSnapStrength>
+                <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+                <spawnLocType>OnTarget</spawnLocType>
+            </li>
+        </children>
+    </EffecterDef>
+
+    <FleckDef ParentName="FleckBase_Thrown">
+        <defName>AOC_ShockwaveImplode</defName>
+        <altitudeLayer>MoteLow</altitudeLayer>
+        <fadeInTime>0</fadeInTime>
+        <solidTime>0.0</solidTime>
+        <fadeOutTime>0.4</fadeOutTime>
+        <growthRate>-10.0</growthRate>
+        <graphicData>
+            <texPath>Things/Projectile/HG_ArcCannon_Implode1</texPath>
+            <shaderType>MoteGlow</shaderType>
+            <drawSize>6.00</drawSize>
+        </graphicData>
+    </FleckDef>
+
+    <FleckDef ParentName="FleckBase_Thrown">
+        <defName>AOC_ShockwaveImplodeFixed</defName>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <fadeInTime>0.1</fadeInTime>
+        <fadeOutTime>0.1</fadeOutTime>
+        <solidTime>0.4</solidTime>
+        <growthRate>0</growthRate>
+        <useAttachLink>true</useAttachLink>
+        <graphicData>
+            <texPath>Things/Projectile/HG_ArcCannon_Implode1</texPath>
+            <shaderType>MoteGlow</shaderType>
+            <drawSize>1.00</drawSize>
+        </graphicData>
+    </FleckDef>
+
+    <FleckDef ParentName="FleckBase_Thrown">
+        <defName>AOC_ShockwaveBlast</defName>
+        <altitudeLayer>MoteOverheadLow</altitudeLayer>
+        <fadeInTime>0</fadeInTime>
+        <solidTime>0.4</solidTime>
+        <fadeOutTime>0.1</fadeOutTime>
+        <growthRate>20.0</growthRate>
+        <graphicData>
+            <texPath>Things/Projectile/HG_ArcCannon_Implode2</texPath>
+            <graphicClass>Graphic_FleckPulse</graphicClass>
+            <shaderType>MoteGlow</shaderType>
+            <drawSize>0.50</drawSize>
+        </graphicData>
+    </FleckDef>
+
+</Defs>

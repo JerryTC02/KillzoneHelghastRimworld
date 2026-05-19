@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <ThingDef ParentName= "HelghastArmorMachineableBase">
+    <defName>Apparel_HG_HazardHelm</defName>
+    <label>Visari Mk IX Hazard Helmet</label>
+    <description>The Stahl Arms mark IX represented a unique evolutionary dead end in terms of arms development for the state, born out of the vision of the Stahl Arms bureau with no military oversight, The mark IX could have, under different conditions, been the hallmark armor of Jorhan Stahl's helghast empire, had such a thing ever come to fruition. Users report that it remained comfortable and environmentally controlled even under extreme temperatures or exposed to noxious fumes. The helmet did not have onboard targeting computers or reactive optics unlike other helmets of the same era, but instead opted for maximum protection.</description>
+    <techLevel>Industrial</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+      <researchPrerequisite>PoweredArmor</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+	  <displayPriority>501</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Helghast/Hazmat/Helmet/Hazmat_Helmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1</drawSize>
+    </graphicData>
+    <uiIconScale>1.25</uiIconScale>
+    <statBases>
+      <WorkToMake>17500</WorkToMake>
+      <MaxHitPoints>215</MaxHitPoints>
+      <Mass>2.5</Mass>
+      <Flammability>0.05</Flammability>
+      <ArmorRating_Sharp>1</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.43</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.50</ArmorRating_Heat>
+      <Insulation_Cold>5</Insulation_Cold>
+      <Insulation_Heat>2</Insulation_Heat>
+      <EquipDelay>4.5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+	  <ToxicEnvironmentResistance>0.85</ToxicEnvironmentResistance>
+	  <SocialImpact>-0.1</SocialImpact>
+	  <DecompressionResistance MayRequire="kentington.saveourship2">0.75</DecompressionResistance>
+	  <HypoxiaResistance MayRequire="kentington.saveourship2">1</HypoxiaResistance>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.67</VacuumResistance>
+    </equippedStatOffsets>
+	<thingCategories>
+      <li>ArmorHeadgear</li>
+    </thingCategories>
+    <costList>
+	  <Steel>50</Steel>
+	  <ComponentIndustrial>4</ComponentIndustrial>
+	  <Chemfuel>35</Chemfuel>
+      <Plasteel>25</Plasteel>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Helghast/Hazmat/Helmet/Hazmat_Helmet</wornGraphicPath>
+	  <tags>
+        <li>HelghastHazard</li>
+      </tags>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <useDeflectMetalEffect>true</useDeflectMetalEffect>
+    </apparel>
+  </ThingDef>
+  
+  <ThingDef ParentName= "HelghastArmorMachineableBase">
+    <defName>Apparel_HG_NG_AssaultHelm</defName>
+    <label>Visari Next-Generation Assault Helmet</label>
+    <description>The product of decades of ocular tech development, the eyepieces of the Next Gen assault helm are high power cameras feeding into a high tech HUD, with an optional setting to manually 'eyeball' targets if the tech fails. Years of delicate field testing has condensed all of the info gathered into an ergonomic readable display that feels natural. Much of the overall design of the helmet hails from the Hazard series, but careful work was done to improve wearer comfort over long periods, and internal rebreathers combined with enviromental seals render it immune to toxic enviroments as well as giving the user limited space combat capabilities..</description>
+    <techLevel>Spacer</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+      <researchPrerequisite>PoweredArmor</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+	  <displayPriority>502</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Helghast/ShadowAssault/Helmet/ShadowAssault_Helmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1</drawSize>
+    </graphicData>
+    <uiIconScale>1.25</uiIconScale>
+    <statBases>
+      <WorkToMake>17500</WorkToMake>
+      <MaxHitPoints>215</MaxHitPoints>
+      <Mass>2.5</Mass>
+      <Flammability>0.05</Flammability>
+      <ArmorRating_Sharp>1</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.43</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.50</ArmorRating_Heat>
+      <Insulation_Cold>5</Insulation_Cold>
+      <Insulation_Heat>2</Insulation_Heat>
+      <EquipDelay>4.5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+	  <ToxicEnvironmentResistance>0.85</ToxicEnvironmentResistance>
+	  <SocialImpact>-0.1</SocialImpact>
+	  <DecompressionResistance MayRequire="kentington.saveourship2">0.75</DecompressionResistance>
+	  <HypoxiaResistance MayRequire="kentington.saveourship2">1</HypoxiaResistance>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.67</VacuumResistance>
+    </equippedStatOffsets>
+	<thingCategories>
+      <li>ArmorHeadgear</li>
+    </thingCategories>
+    <costList>
+	  <Steel>50</Steel>
+      <ComponentSpacer>1</ComponentSpacer>
+      <Plasteel>25</Plasteel>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Helghast/ShadowAssault/Helmet/ShadowAssault_Helmet</wornGraphicPath>
+	  <tags>
+        <li>HelghastSpaceAssault</li>
+      </tags>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <useDeflectMetalEffect>true</useDeflectMetalEffect>
+    </apparel>
+  </ThingDef>
+ 
+</Defs>

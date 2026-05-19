@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <ThingDef ParentName="HelghastArmorMachineableBase">
+    <defName>Apparel_HG_HeaviestHeavy</defName>
+    <label>Stahl Arms Para-Aramid Tactical E.O.D 'Ogre' Suit</label>
+    <description>An inelegant effort from Stahl Arms to produce personal armor capable of living up to advanced specifications, The result was a multi-layered padded cataphract for modern military conflicts. There are no obvious weak points, and rather than conventional plates, the armor makes use of dense aramid-material which gives the armor its bulky waddling gait. Beneath the protective layers, Stahl included a pressurized space suit to further satisfy demands for absolute immunity to most forms of environmental damage. An internal exoskeleton helps the user operate the heavy suit, however it does not make it any less awkward to operate.\n\nWhen the need for a next-generation heavy infantry EOD and assault bodysuit was made evident during the relative inadequate performance of heavy armors on Vekta, the 'Ogre' system was tackled by a cabal of corporate interests working under intense duress. Visari Corporation's Lsha5 helmet was especially considered to be an inspired design triumph, Using a drones sensor node and deep sea exploration helmet as baselines, Visari created a sealed, tox immune, void immune, inflammable and virtually bulletproof helmet resistant to most battlefield threats aside from potent anti tank weaponry. While Stahl Arms ultimately won the bid for the bodyarmor itself, even they acknowledged the bizarre-looking effectiveness of the final work, and modified their design with Visari Corp's in a joint venture of millitary manufacturing.</description>
+    <techLevel>Industrial</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+      <researchPrerequisite>PoweredArmor</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+	  <displayPriority>201</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Helghast/Heavy/Heavy</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.3</drawSize>
+    </graphicData>
+	<tickerType>Normal</tickerType>
+    <statBases>
+      <WorkToMake>92500</WorkToMake>
+      <MaxHitPoints>600</MaxHitPoints>
+      <Mass>22.5</Mass>
+      <Flammability>0.05</Flammability>
+      <ArmorRating_Sharp>1.15</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.60</ArmorRating_Heat>
+      <Insulation_Cold>40</Insulation_Cold>
+      <Insulation_Heat>15</Insulation_Heat>
+      <EquipDelay>18</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+	  <MoveSpeed>-0.50</MoveSpeed>
+	  <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+	  <FixBrokenDownBuildingSuccessChance>-0.25</FixBrokenDownBuildingSuccessChance>
+	  <ConstructionSpeed>-0.25</ConstructionSpeed>
+	  <ConstructSuccessChance>-0.25</ConstructSuccessChance>
+	  <WorkSpeedGlobal>-0.25</WorkSpeedGlobal>
+	  <ShootingAccuracyPawn>0.15</ShootingAccuracyPawn>
+	  <DecompressionResistance MayRequire="kentington.saveourship2">1</DecompressionResistance>
+	  <HypoxiaResistance MayRequire="kentington.saveourship2">1</HypoxiaResistance>
+	  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.90</VacuumResistance>
+	  <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">10</VEF_MassCarryCapacity>
+    </equippedStatOffsets>
+    <thingCategories>
+      <li>ApparelArmor</li>
+    </thingCategories>
+    <costList>
+	  <Steel>225</Steel>
+	  <Chemfuel>150</Chemfuel>
+	  <ComponentSpacer>2</ComponentSpacer>
+	  <ComponentIndustrial>20</ComponentIndustrial>
+	  <Cloth>25</Cloth>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+		<li>FullHead</li>
+      </bodyPartGroups>
+	  <tags>
+        <li>HelghastHeaviestHeavy</li>
+      </tags>
+      <wornGraphicPath>Things/Helghast/Heavy/Heavy</wornGraphicPath>
+	  <blocksAddedPartWoundGraphics>true</blocksAddedPartWoundGraphics>
+      <parentTagDef>ApparelBody</parentTagDef>
+	  <renderSkipFlags>
+        <li>Head</li>
+      </renderSkipFlags>
+      <layers>
+        <li>Middle</li>
+		<li>Shell</li>
+      </layers>
+    </apparel>
+	    <comps>
+            <li Class="CVN_HandShield.CompProperties_HandheldShield">
+                <useItemHPasShieldHP>false</useItemHPasShieldHP>
+                <shieldMaxHP>75</shieldMaxHP>
+                <shieldRechargeAmount>5</shieldRechargeAmount>
+                <damageToShieldMultiplier>0.75</damageToShieldMultiplier>
+                <minimumWorkingHp>10</minimumWorkingHp>
+                <repairOvertime>true</repairOvertime>
+                <repairInterval>75</repairInterval>
+                <repairDelayTicks>5000</repairDelayTicks>
+                <repairAmount>5</repairAmount>
+                <repairPercent>0.01</repairPercent>
+				<weaponWeightLimit>100</weaponWeightLimit>
+                <isDropWeaponIfOverweight>false</isDropWeaponIfOverweight>
+                <isShieldStopFunctionIfOverweight>false</isShieldStopFunctionIfOverweight>
+                <immuneDamageDef>
+					<li>Frostbite</li>
+                </immuneDamageDef>
+            </li>
+			<li Class="CompProperties_ApparelReloadable">
+             <maxCharges>500</maxCharges>
+             <ammoDef>Chemfuel</ammoDef>
+             <ammoCountToRefill>70</ammoCountToRefill>
+             <baseReloadTicks>60</baseReloadTicks>
+             <soundReload>Standard_Reload</soundReload>
+             <chargeNoun>power</chargeNoun>
+             <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		     <displayGizmoWhileDrafted>true</displayGizmoWhileDrafted>
+            </li>
+        </comps>
+	    <modExtensions>
+         <li Class="taranchuk_apparelgraphics.ApparelExtension">
+          <hideBody>False</hideBody>
+          <femaleBody>Male</femaleBody>
+          <maleBody>Male</maleBody>
+         </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="HelghastArmorMachineableBase">
+    <defName>Apparel_HG_Hazopsuit</defName>
+    <label>Gunstellig-Compact 'Haz-op' Level A Clean-Suit</label>
+    <description>A civilian grade clean suit used by engineers and scientists of the Guntellig-Compact, now disseminated to a wide variety of military contractors across the helghan diaspora, the clean suit has been optimized for ensuring survival in just about any climate or conditions imaginable. Hazmat cleanup teams, petruscite workers, orbital construction and deepcore miners all utilize this apparel to keep them safe. During wartime, many of these civilians are called up to serve in rear-echelon positions, and when they can, they prefer to wear suits like this. Because of the realities of the war, simple aramid plates have been inserted in some of the bulky free space across the suit, but it is by no means intended to be suitable for frontline combat.\n\nThe Compact's idea behind the creation of the Level-A suit was to focus on layers of redundancy, users were expected to wear multiple layers of protection underneath the sturdy exterior rubber, so that in the event of a suit breach the chance of survival was higher then competing products. This level of care was needed for the extremely dangerous work of navigating petruscite extraction sites or assembling helghan space craft in high orbit. It's also kept this suit relevant for decades. Thought it was not originally intended to be used as a space suit, it can be made void ready with minimal preparation.</description>
+    <techLevel>Industrial</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+      <researchPrerequisite>FlakArmor</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+	  <displayPriority>202</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Helghast/Scientist/Scientist</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToMake>22500</WorkToMake>
+      <MaxHitPoints>225</MaxHitPoints>
+      <Mass>14.5</Mass>
+      <Flammability>0</Flammability>
+      <ArmorRating_Sharp>0.50</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.20</ArmorRating_Heat>
+      <Insulation_Cold>20</Insulation_Cold>
+      <Insulation_Heat>20</Insulation_Heat>
+      <EquipDelay>5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+	  <MoveSpeed>-0.05</MoveSpeed>
+	  <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+	  <FixBrokenDownBuildingSuccessChance>0.1</FixBrokenDownBuildingSuccessChance>
+	  <ConstructionSpeed>0.10</ConstructionSpeed>
+	  <ConstructSuccessChance>0.1</ConstructSuccessChance>
+	  <WorkSpeedGlobal>0.10</WorkSpeedGlobal>
+	  <DecompressionResistance MayRequire="kentington.saveourship2">1</DecompressionResistance>
+	  <HypoxiaResistance MayRequire="kentington.saveourship2">1</HypoxiaResistance>
+	  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.90</VacuumResistance>
+	  <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">15</VEF_MassCarryCapacity>
+    </equippedStatOffsets>
+    <thingCategories>
+      <li>ApparelArmor</li>
+    </thingCategories>
+    <costList>
+	  <Steel>200</Steel>
+	  <Plasteel>100</Plasteel>
+	  <Chemfuel>100</Chemfuel>
+	  <ComponentIndustrial>2</ComponentIndustrial>
+	  <Cloth>150</Cloth>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+		<li>FullHead</li>
+      </bodyPartGroups>
+	  <tags>
+        <li>HelghastScientist</li>
+      </tags>
+      <wornGraphicPath>Things/Helghast/Scientist/Scientist</wornGraphicPath>
+	  <blocksAddedPartWoundGraphics>true</blocksAddedPartWoundGraphics>
+      <parentTagDef>ApparelBody</parentTagDef>
+	  <renderSkipFlags>
+        <li>Head</li>
+      </renderSkipFlags>
+      <layers>
+        <li>Middle</li>
+		<li>Shell</li>
+      </layers>
+    </apparel>
+  </ThingDef>
+  
+  <ThingDef ParentName="HelghastArmorMachineableBase">
+    <defName>Apparel_HG_Hazard</defName>
+    <label>Visari Corporation Mk IX Hazard Armor</label>
+    <description>Stahl Arms maintained a budget for private arms development independent of the whims of the Helghan state, and from that reserve came the so-called 'Hazmat Troopers'. Designed to withstand exposure to raw unrefined petruscite, radiation, extreme temperatures, and void conditions, the Mark IX was never really meant for large scale production, but rather to outfit a personal cadre of elite guards, not dissimilar to the third shock army's tendency to secure navy equipment to outfit its praetorians. Ostensibly Hazmat troops were paramilitary contractors subservient to the state, but most understood them to be the picked guards of the corporate warlord's personal army. In the fallout of the Petruscide, these suits achieved limited production runs in other states, but the armor proved to be slow, time consuming to make, and heavy, causing it to never achieve mass adoption by any users. Later helghan armor systems would go on to achieve similar performance without these hurdles, yet still, they remain an effective choice for discerning units worried about exposure to the elements.</description>
+    <techLevel>Industrial</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <researchPrerequisite>PoweredArmor</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>7</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+	  <displayPriority>203</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Helghast/Hazmat/Hazmat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToMake>50000</WorkToMake>
+      <MaxHitPoints>320</MaxHitPoints>
+      <Mass>15</Mass>
+      <Flammability>0</Flammability>
+      <ArmorRating_Sharp>1</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.43</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.50</ArmorRating_Heat>
+      <Insulation_Cold>45</Insulation_Cold>
+      <Insulation_Heat>8</Insulation_Heat>
+      <EquipDelay>12</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.20</MoveSpeed>
+	  <WorkSpeedGlobal>-0.10</WorkSpeedGlobal>
+	  <ToxicEnvironmentResistance>0.75</ToxicEnvironmentResistance>
+	  <DecompressionResistance MayRequire="kentington.saveourship2">0.75</DecompressionResistance>
+	  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.3</VacuumResistance>
+    </equippedStatOffsets>
+    <thingCategories>
+      <li>ApparelArmor</li>
+    </thingCategories>
+    <costList>
+	  <Steel>85</Steel>
+	  <ComponentIndustrial>8</ComponentIndustrial>
+      <Plasteel>100</Plasteel>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+	  <tags>
+        <li>HelghastHazard</li>
+      </tags>
+      <wornGraphicPath>Things/Helghast/Hazmat/Hazmat</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+		<li>Shell</li>
+      </layers>
+    </apparel>
+	<modExtensions>
+     <li Class="taranchuk_apparelgraphics.ApparelExtension">
+      <hideBody>False</hideBody>
+      <femaleBody>Male</femaleBody>
+      <maleBody>Male</maleBody>
+     </li>
+    </modExtensions>
+  </ThingDef>
+  
+  <ThingDef ParentName="HelghastArmorMachineableBase">
+    <defName>Apparel_HG_NG_Assault</defName>
+    <label>Visari Next-Gen Assault Armor System</label>
+    <description>When Hera visari envisioned a new dawn for the Helghan state, it demanded a revised military alongside it. In light of high casualties and war weariness, this new armor project would spare no expense in keeping frontline troops safe. Visari Corp and Stahl collaborated on the contract along with a dozen other firms for components; this set however, is largely the work of the Visari Corporation, and as such was given the honor of bearing that namesake. As far as mass production infantry armor goes, this is an excellent system, meant to withstand high caliber rounds, while still remaining light and maneuverable. A happy coincidence is that efforts to environment-proof the armor have allowed this system to keep its user alive even in the harshest possible conditions, though not over extended periods. It is said that helghan orbital marines occasionally swear by this armor, even over intentionally designed space suits.</description>
+    <techLevel>Spacer</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <researchPrerequisite>PoweredArmor</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>7</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+	  <displayPriority>204</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Helghast/ShadowAssault/ShadowAssault</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToMake>40000</WorkToMake>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Mass>8</Mass>
+      <Flammability>0</Flammability>
+      <ArmorRating_Sharp>0.9</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.42</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.42</ArmorRating_Heat>
+      <Insulation_Cold>45</Insulation_Cold>
+      <Insulation_Heat>8</Insulation_Heat>
+      <EquipDelay>10</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>0.10</MoveSpeed>
+      <RangedCooldownFactor>-0.05</RangedCooldownFactor>
+	  <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">10</VEF_MassCarryCapacity>
+	  <ToxicEnvironmentResistance>0.75</ToxicEnvironmentResistance>
+	  <DecompressionResistance MayRequire="kentington.saveourship2">0.75</DecompressionResistance>
+	  <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.3</VacuumResistance>
+    </equippedStatOffsets>
+    <thingCategories>
+      <li>ApparelArmor</li>
+    </thingCategories>
+    <costList>
+	  <Steel>60</Steel>
+	  <ComponentIndustrial>4</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+      <Plasteel>65</Plasteel>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+	  <tags>
+        <li>HelghastSpaceAssault</li>
+      </tags>
+      <wornGraphicPath>Things/Helghast/ShadowAssault/ShadowAssault</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+		<li>Shell</li>
+      </layers>
+    </apparel>
+  </ThingDef>
+
+</Defs>

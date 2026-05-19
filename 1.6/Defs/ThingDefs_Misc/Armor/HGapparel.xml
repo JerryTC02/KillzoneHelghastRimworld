@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <ThingDef ParentName="HelghastArmorMachineableBase">
+    <defName>Apparel_HG_Senate</defName>
+    <label>Helghan Senate Uniform</label>
+    <description>The Senate's origins reach back to the Helghan corporation board of directors. Briefly, this transitioned into a Directory system when the burgeoning corpo-nation began the business of governing a planet during its glory days, and later peacefully reformed into a senate body a few years prior to the fall of Vekta. Under Visari's regime, the old senate body was kept as a symbol of democracy and stability, but in actuality the once powerful board was greatly reduced in favor of empowering the Autarch. That wasnt to say that the senate was feeble however; Visari kept the various chiefs of industry, public sector, and military wings of his regime close and lavishly bribed. Senate hearings were typically private, closed-doors affairs and were often convened with various members in-absentia. The Helghan senate and war council thusly effectively the same thing, and the organization came to look more like the ISA joint chiefs than any democratic government organ by the war's end. Now, in an era of warlords and independent plutocrats, various Helghan statesmen claim senatorial titles and positions whenever they so choose. The immaculate uniforms of senators inspire respect and fear from lesser men, who know very well anyone wearing such a uniform may dole out life or death as they see fit.</description>
+    <techLevel>Industrial</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+		<li>HG_Foundry</li>
+      </recipeUsers>
+	  <displayPriority>101</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Helghast/HelghanSenateUniform/HelghanSenateUniform_Male_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToMake>15500</WorkToMake>
+      <MaxHitPoints>215</MaxHitPoints>
+      <Mass>4.5</Mass>
+      <Flammability>0.4</Flammability>
+      <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.10</ArmorRating_Heat>
+      <Insulation_Cold>30</Insulation_Cold>
+      <Insulation_Heat>15</Insulation_Heat>
+      <EquipDelay>2.5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+		<ArrestSuccessChance>0.05</ArrestSuccessChance>
+	    <ConversionPower MayRequire="Ludeon.RimWorld.Ideology">0.10</ConversionPower>
+	    <SocialImpact>0.25</SocialImpact>
+	    <TradePriceImprovement>0.10</TradePriceImprovement>
+    </equippedStatOffsets>
+    <thingCategories>
+      <li>ApparelArmor</li>
+    </thingCategories>
+    <costList>
+	  <Steel>25</Steel>
+	  <Cloth>125</Cloth>
+	  <Gold>1</Gold>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+	  <tags>
+        <li>HelghanSenate</li>
+      </tags>
+      <wornGraphicPath>Things/Helghast/HelghanSenateUniform/HelghanSenateUniform</wornGraphicPath>
+      <layers>
+        <li>Shell</li>
+      </layers>
+    </apparel>
+	<modExtensions>
+     <li Class="taranchuk_apparelgraphics.ApparelExtension">
+      <hideBody>False</hideBody>
+      <femaleBody>Female</femaleBody>
+      <maleBody>Male</maleBody>
+     </li>
+    </modExtensions>
+  </ThingDef>
+  
+  <ThingDef ParentName="HelghastArmorMachineableBase">
+    <defName>Apparel_HG_Shocktrooper</defName>
+    <label>Helghan Garrison Greatcoat</label>
+    <description>A weather resistant stylish non-comissioned soldier's greatcoat, a common sight in peacetime in Helghan army bases, outfits like these were commonly pressed into military service. Similar to but worse than a rifleman's BDU in most ways, these were considered the iconic 'uniforms' of rapidly mobilized and trained light infantry drawn up for frontline service during planetary siege. These brave light infantry units suffered above average casualties, but survivors were considered good candidates to replenish other formations.</description>
+    <techLevel>Industrial</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+	  <displayPriority>102</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Helghast/ShockTrooper/kz2_shock_trooper_coat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToMake>11500</WorkToMake>
+      <MaxHitPoints>225</MaxHitPoints>
+      <Mass>3</Mass>
+      <Flammability>0.5</Flammability>
+      <ArmorRating_Sharp>0.16</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.07</ArmorRating_Heat>
+      <Insulation_Cold>24</Insulation_Cold>
+      <Insulation_Heat>15</Insulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+	  <MoveSpeed>0.20</MoveSpeed>
+	  <ToxicEnvironmentResistance>0.05</ToxicEnvironmentResistance>
+    </equippedStatOffsets>
+    <thingCategories>
+      <li>ApparelArmor</li>
+    </thingCategories>
+    <costList>
+	  <Steel>10</Steel>
+	  <Cloth>125</Cloth>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+	  <tags>
+        <li>HelghastShock</li>
+      </tags>
+      <wornGraphicPath>Things/Helghast/ShockTrooper/kz2_shock_trooper_coat</wornGraphicPath>
+      <layers>
+        <li>Shell</li>
+      </layers>
+    </apparel>
+	<modExtensions>
+     <li Class="taranchuk_apparelgraphics.ApparelExtension">
+      <hideBody>False</hideBody>
+      <femaleBody>Female</femaleBody>
+      <maleBody>Male</maleBody>
+     </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>

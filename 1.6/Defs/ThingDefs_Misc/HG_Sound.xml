@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  
+  <SoundDef>
+    <defName>Shot_HG_ArcRifle</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>5</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Weapon/HGArcRifle</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>45.2941~45.2941</volumeRange>      
+        <pitchRange>1.091765~1</pitchRange>      
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>Shot_HG_ArcCannon</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>5</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Weapon/HGArcCannon</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>45.2941~45.2941</volumeRange>      
+        <pitchRange>1~1</pitchRange>      
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

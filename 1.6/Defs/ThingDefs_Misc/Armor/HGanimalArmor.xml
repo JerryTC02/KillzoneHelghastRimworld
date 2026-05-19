@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <ThingDef Name="HelghanHound_Apparels" ParentName="ResourceBase" Abstract="True">
+    <techLevel>Industrial</techLevel>	
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <recipeUsers>
+        <li>HG_Foundry</li>
+      </recipeUsers>
+	  <displayPriority>601</displayPriority>
+	  <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+      <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+	  <researchPrerequisite>FlakArmor</researchPrerequisite>
+    </recipeMaker>
+    <tradeTags>
+      <li>HelghastArmor</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="HelghanHound_Apparels">
+		<defName>HG_Hound_Armor</defName>
+		<label>Helghan K-9 Flak Harness</label>
+		<description>Helghan forces rarely utilize dogs, and usually only to fill gaps in surveillance work which drones are ill suited for, or to guard rear echelon stations. That said, desperation has time and again, forced the state's hands to deploy K-9 units into the thick of combat as expendable shock or terror units. To that end, their official flak harness is a compromise between basic defense against light small arms and shrapnel, environmental protection measures to extend the life of the hound in hostile toxic terrain, and storage to carry ammo or other items for troops.\n\nThe sight of fast moving packs with glowing eyes and lipless maws has been reported to have extreme effects on enemy morale and long range drone footage of ISR troops are sometimes fooled into believing a group of tactical dogs are Helghan infantry. However, even with this armor, the average survival rate of these animals in the field is very low. To use them on a frontline regularly would require a cold hearted or desperate commander.</description>
+		<graphicData>
+			<texPath>Things/Pawn/Animal/HelghanShepard/Armor/HelganShepardArmor_east</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.25</drawSize>
+		</graphicData>
+		<stackLimit>1</stackLimit>
+		<tradeTags>
+		</tradeTags>
+		<thingCategories />
+		<statBases>
+          <MarketValue>300</MarketValue>
+          <Mass>0.2</Mass>
+        </statBases>
+		<costList>
+         <Cloth>40</Cloth>
+         <Steel>70</Steel>
+         <ComponentIndustrial>1</ComponentIndustrial>
+        </costList>
+		<comps>
+		<li Class="CompProperties_Usable">
+			<useJob>UseItem</useJob>
+			<useLabel>Apply Dog Armor</useLabel>
+			<useDuration>60</useDuration>
+		</li>
+		<li Class="HediffUpgrader.CompProperties_Targetable_SinglePawnFilter">
+                <isAdulthoodOnly>True</isAdulthoodOnly>
+                <whitelistDef>
+                    <li>HG_Hound</li>
+                </whitelistDef>
+                <blacklistDef />
+        </li>
+		<li Class="HediffUpgrader.CompProperties_TargetEffectUpgradeMech"> 
+			<jobDef>AOC_MoveToUpgrade</jobDef>
+			<hediffUpgradeStages>
+				<li>
+					<HediffDef>HG_Hound_ArmorHediff</HediffDef>
+					<replaceHediff>
+					  <li>HG_Hound_ArmorHediff</li>
+					</replaceHediff>
+				</li>
+			</hediffUpgradeStages>
+		</li>
+		</comps>
+		<thingSetMakerTags Inherit="False" />
+	</ThingDef>
+  
+  <HediffDef>
+    <defName>HG_Hound_ArmorHediff</defName>
+    <label>Helghan K-9 Flak Harness</label>
+    <description>A suit of protective gear has been provided to this hound.</description>
+    <debugLabelExtra>other</debugLabelExtra>
+    <hediffClass>HediffWithComps</hediffClass>
+	<defaultLabelColor>(197,108,6)</defaultLabelColor>
+	<spawnThingOnRemoved>HG_Hound_Armor</spawnThingOnRemoved>
+    <isBad>false</isBad>
+	<renderNodeProperties>
+      <li>
+        <debugLabel>Base</debugLabel>
+        <texPath>Things/Pawn/Animal/HelghanShepard/Armor/HelganShepardArmor</texPath>
+        <parentTagDef>Body</parentTagDef>
+        <useRottenColor>false</useRottenColor>
+		<drawSize>1.1</drawSize>
+        <baseLayer>25</baseLayer>
+		<pawnType>Any</pawnType>
+      </li>
+    </renderNodeProperties>
+	<tags>
+	  <li>Apparel_Hediff</li>
+	</tags>
+    <stages>
+      <li>
+	    <label>Armored</label>          
+        <statOffsets>
+		  <ToxicEnvironmentResistance>0.35</ToxicEnvironmentResistance>
+          <ArmorRating_Sharp>0.90</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.32</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.25</ArmorRating_Heat>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+</Defs>

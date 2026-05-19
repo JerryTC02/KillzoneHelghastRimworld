@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  
+  <ThingDef ParentName="HelghastBaseHumanMakeableGun">
+    <defName>Gun_HG_VC32g</defName>
+    <label>VC32 Sniper Rifle</label>
+    <description>The Visari Corporation competed fiercely with Stahl arms for the contract of a sniper rifle for the armed forces. Both groups used the StA-14 as a baseline, but Visari-Corporations skill for over-engineering saw their contract gain popularity with the marksmen of the Helghan army. To help stabilize the weapon and keep it accurate at distance, its internals were changed to a bolt action fire. As a second-generation sniper rifle, the VC32 was intended to be something of a 'mass production' model despite its powerful performance and high cost.</description>
+	<techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Helghast/Weapons/VC32</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+	<equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>PrecisionRifling</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>7</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+      <displayPriority>901</displayPriority>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>51500</WorkToMake>
+      <Mass>4</Mass>
+      <AccuracyTouch>0.50</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.90</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+	  <Uranium>10</Uranium>
+      <Steel>75</Steel>
+      <ComponentIndustrial>9</ComponentIndustrial>
+    </costList>
+    <weaponTags>
+	 <li>HelghastSniper</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_VC32g</defaultProjectile>
+        <warmupTime>3.5</warmupTime>
+        <range>48.9</range>
+        <soundCast>Shot_SniperRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>2.2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_VC32g</defName>
+    <label>VC32 round</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>30</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>100</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="HelghastBaseHumanMakeableGun">
+    <defName>Gun_HG_StA3g</defName>
+    <label>StA-3 LMG</label>
+    <description>When the need for a light machine gun arose, the initial reaction from Stahl Arms was confusion; their entire design philosophy was to allow any part of a squad to suppress positions. However, initial attempts at mounting the StA-52 to vehicle hulls proved ineffective, and so the venerable StA-3 was revived. Originally commissioned by the Helghan corporation of a much younger Stahl Arms to provide a light vehicle mounted machine gun, the StA-3 has always been a bullet-hose. Fire rate was optimized above all. Compared to other LMGs, the StA 3 is lighter, quick to set up, and exceedingly inaccurate except at close range. The intent of the StA-3 was to suppress squad elements over a wide area. Yet, despite its shortcomings, the weapon is still used today in squad automatic rifle roles. Infantry have a love hate relationship with the gun, which has been responsible for friendly fire incidents on occasion.</description>
+	<techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Helghast/Weapons/STA3</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+	<equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>GasOperation</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+      <displayPriority>1001</displayPriority>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>34000</WorkToMake>
+      <Mass>6.5</Mass>
+      <AccuracyTouch>0.40</AccuracyTouch>
+      <AccuracyShort>0.45</AccuracyShort>
+      <AccuracyMedium>0.35</AccuracyMedium>
+      <AccuracyLong>0.25</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>60</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <weaponTags>
+	 <li>HelghastHeavy</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_HG_LMG</defaultProjectile>
+        <warmupTime>1.7</warmupTime>
+        <range>24.9</range>
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <burstShotCount>8</burstShotCount>
+        <soundCast>Shot_Minigun</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_HG_LMG</defName>
+    <label>LMG bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>12</damageAmountBase>
+      <stoppingPower>1</stoppingPower>
+      <speed>46</speed>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="HelghastBaseHumanMakeableGun">
+    <defName>Gun_HG_StA6g</defName>
+    <label>StA-6 HMG</label>
+    <description>A bold, bulky weapon designed alongside the heavy suits Stahl co-designed with Visari, the StA-6 is never seen on any infantry unit not wearing one such suit for a simple reason: it is absolutely enormous and requires ammo fed from the suits loader systems. Firing .50 caliber depleted uranium slugs from a pressurized ammo drum at the rear of the suit- a design compromise required because of the high cyclic fire rate of this system allows it to wreak havoc on even well defended enemy positions. Intended as a mobile, urban warfare anti infantry autocannon, the StA-6 proved capable of punching through light vehicle chassis inside of 100 meters, and consistently defeated infantry armor systems. Combined with the suits exoskeleton, aim was fairly smooth, as despite a good fire rate and heavy round, the weight of the rifle itself stabilized the system. Helghan 'heavies' had a love hate relationship with this gun- even with the suit it caused long term backpain and had a bad habit of causing small bone fractures in the arms from the immense strength needed to use this firearm over an extended period. But perhaps this was a bad way to look at its performance: those health concerns only flared up because their operators killed everything and everyone they came into contact with and lived to tell about it. Few ballistic weapons in the helghan arsenal achieve the raw power and performance of this firearm.</description>
+	<techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Helghast/Weapons/STA6</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.35</drawSize>
+    </graphicData>
+	<equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>PrecisionRifling</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>9</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+      <displayPriority>1002</displayPriority>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>62500</WorkToMake>
+      <Mass>17</Mass>
+      <AccuracyTouch>0.20</AccuracyTouch>
+      <AccuracyShort>0.35</AccuracyShort>
+      <AccuracyMedium>0.35</AccuracyMedium>
+      <AccuracyLong>0.30</AccuracyLong>
+      <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>150</Steel>
+      <ComponentIndustrial>20</ComponentIndustrial>
+	  <Uranium>50</Uranium>
+    </costList>
+    <weaponTags>
+	 <li>HelghastHeavyHEAVY</li>
+    </weaponTags>
+	<equippedStatOffsets>
+      <MoveSpeed>-0.10</MoveSpeed>
+    </equippedStatOffsets>
+    <verbs>
+	  <li Class="BM_HeavyWeapon.VerbProperties_ApparelAmmo">
+        <verbClass>BM_HeavyWeapon.Verb_Shoot_ApparelAmmo</verbClass>
+		<apparelList>
+			<li>Apparel_HG_HeaviestHeavy</li>
+		</apparelList>
+		<missingReason>Missing armor. Equip it first.</missingReason>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_HG_HMG</defaultProjectile>
+        <warmupTime>2.2</warmupTime>
+        <range>32.9</range>
+		<ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <burstShotCount>10</burstShotCount>
+        <soundCast>Shot_Minigun</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>14</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>14</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_HG_HMG</defName>
+    <label>StA-6 round</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>15</damageAmountBase>
+      <stoppingPower>2</stoppingPower>
+      <speed>56</speed>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="HelghastBaseHumanMakeableGun">
+    <defName>Gun_HG_Vns12Ag</defName>
+    <label>VnS-12A Purger</label>
+    <description>The 'purger' was a popular 'light minigun' or 'assault minigun' hybrid rifle created to act as a lighter alternative to earlier man portable squad suppression weapons of the Helghast armed forces. Unlike its other ballistic counterparts like the Pulver and Keyzer, the Purger was overproduced and came far over budget compared to Stahl's other 'next generation' weapons updates. While the Purger does use conventional ballistics, advanced fire control computers, partial magnetic acceleration, speed loading mechanisms, and a powerful engine all combined in a metallic polymer frame it still somehow comes in lighter than any prior helghan man portable rotary cannon. Short of a true charge firing mechanism this may be the best, most accurate bullet-hose a spacer society can produce without some kind of compromise. VnS was of course, quite proud of its accomplishment, but it only received a limited rollout and often needed to support more conventional GPMG's due to its outrageous costs and long production time. Helghast armories meticulously care for the dozen delicate electronic systems on the firearm, and there is serious doubt that this weapon could be realistically mass produced in a large scale war.</description>
+	<techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Helghast/Weapons/Vns12A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+	<equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>PrecisionRifling</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>10</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+      <displayPriority>1003</displayPriority>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>122500</WorkToMake>
+      <Mass>13</Mass>
+			<AccuracyTouch>0.15</AccuracyTouch>
+			<AccuracyShort>0.30</AccuracyShort>
+			<AccuracyMedium>0.27</AccuracyMedium>
+			<AccuracyLong>0.20</AccuracyLong>
+      <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Plasteel>100</Plasteel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <Steel>75</Steel>
+	  <Uranium>75</Uranium>
+	  <ComponentSpacer>6</ComponentSpacer>
+    </costList>
+    <weaponTags>
+	 <li>HelghastHeavySpacerElite</li>
+    </weaponTags>
+	<equippedStatOffsets>
+      <MoveSpeed>-0.65</MoveSpeed>
+    </equippedStatOffsets>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_HG_SpacerHMG</defaultProjectile>
+        <warmupTime>5</warmupTime>
+        <range>31.9</range>
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <burstShotCount>20</burstShotCount>
+        <soundCast>Shot_Minigun</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>14</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>14</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_HG_SpacerHMG</defName>
+    <label>Vns12A round</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>20</damageAmountBase>
+      <stoppingPower>3</stoppingPower>
+      <speed>65</speed>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="HelghastBaseHumanMakeableGun">
+    <defName>Gun_HG_StA12g</defName>
+    <label>StA-12 Inferno Shotgun</label>
+    <description>Infamous for all the wrong reasons, this is a substandard magazine-fed pump-shotgun that was deemed 'good enough' by the Helghan ministry of defense and rushed into mass production. Its one redeeming feature is that it is standardized with incendiary shells capable of igniting targets. Sadly its accuracy, rate of fire, damage and penetration suffered compared to most shotguns on the market.</description>
+	<techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Helghast/Weapons/STA12</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>GasOperation</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+      <displayPriority>1101</displayPriority>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>20000</WorkToMake>
+      <Mass>4</Mass>
+      <AccuracyTouch>0.80</AccuracyTouch>
+      <AccuracyShort>0.87</AccuracyShort>
+      <AccuracyMedium>0.77</AccuracyMedium>
+      <AccuracyLong>0.64</AccuracyLong>
+      <RangedWeapon_Cooldown>1.15</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>65</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+	  <Chemfuel>50</Chemfuel>
+    </costList>
+    <weaponTags>
+	 <li>HelghastShotgun</li>
+    </weaponTags>
+    <verbs>
+	  <li Class="Shotgunz.Verb_Properties_Shotgunz">
+        <verbClass>Shotgunz.Verb_Shoot_Shotgunz</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_STA12g</defaultProjectile>
+        <warmupTime>0.8</warmupTime>
+        <range>13.9</range>
+        <soundCast>Shot_Shotgun</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+	    <pellets>8</pellets>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_STA12g</defName>
+    <label>shotgun blast</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>2</damageAmountBase>
+      <stoppingPower>1.2</stoppingPower>
+      <armorPenetrationBase>0.08</armorPenetrationBase>
+      <speed>60</speed>
+	  <extraDamages>
+       <li>
+        <def>Flame</def>
+        <amount>1</amount>
+		<chance>0.1</chance>
+       </li>
+      </extraDamages>
+    </projectile>
+  </ThingDef>
+
+</Defs>

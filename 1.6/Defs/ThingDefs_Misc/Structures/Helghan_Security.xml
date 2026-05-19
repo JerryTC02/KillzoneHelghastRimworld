@@ -1,0 +1,697 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Turret_HG_STA3Turret</defName>
+    <label>StA-3 LMG Emplacement</label>
+    <description>A STA-3 LMG affixed to a turret base, slightly improving its stability, with an added gun shield to protect the user.</description>
+    <thingClass>Building_TurretGun</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <drawHighlight>true</drawHighlight>
+    <drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
+    <graphicData>
+      <texPath>Things/Helghast/Structures/Turretbases/TurretCommon_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.25,1.25)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.27,0.25,0.27)</volume>
+        <offset>(0,0,0)</offset>
+      </shadowData>
+    </graphicData>
+    <uiIconPath>Things/Helghast/Structures/Icons/TurretSTA3_MenuIcon</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+	<hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <Flammability>0.2</Flammability>
+      <WorkToBuild>2750</WorkToBuild>
+      <Mass>7</Mass>
+      <Beauty>-20</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until barrel change</fuelLabel>
+        <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+        <outOfFuelMessage>Needs new barrel</outOfFuelMessage>
+        <fuelFilter><thingDefs><li>Steel</li></thingDefs></fuelFilter>
+        <fuelCapacity>160</fuelCapacity>
+        <fuelMultiplier>1.25</fuelMultiplier>
+        <initialFuelPercent>1</initialFuelPercent>
+        <autoRefuelPercent>0.5</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <factorByDifficulty>true</factorByDifficulty>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+      </li>
+	  <li Class="CompProperties_Mannable">
+        <manWorkType>Violent</manWorkType>
+      </li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.65</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <costList>
+      <Steel>80</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <building>
+      <turretGunDef>Gun_HG_STA3Turret</turretGunDef>
+	  <turretTopDrawSize>1.35</turretTopDrawSize>
+      <turretBurstCooldownTime>2</turretBurstCooldownTime>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
+	  <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>GunTurrets</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>Gun_HG_STA3Turret</defName>
+    <label>StA-3 LMG (Turret)</label>
+    <description>When the need for a light machine gun arose, the initial reaction from Stahl Arms was confusion; their entire design philosophy was to allow any part of a squad to suppress positions. However, initial attempts at mounting the StA-52 to vehicle hulls proved ineffective, and so the venerable StA-3 was revived. Originally commissioned by the Helghan corporation of a much younger Stahl Arms to provide a light vehicle mounted machine gun, the StA-3 has always been a bullet-hose. Fire rate was optimized above all. Compared to other LMGs, the StA 3 is lighter, quick to set up, and exceedingly inaccurate except at close range. The intent of the StA-3 was to suppress squad elements over a wide area. Yet, despite its shortcomings, the weapon is still used today in squad automatic rifle roles. Infantry have a love hate relationship with the gun, which has been responsible for friendly fire incidents on occasion.</description>
+    <graphicData>
+      <texPath>Things/Helghast/Structures/Turrets/TurretSTA-3_Top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>6.5</Mass>
+      <AccuracyTouch>0.45</AccuracyTouch>
+      <AccuracyShort>0.45</AccuracyShort>
+      <AccuracyMedium>0.35</AccuracyMedium>
+      <AccuracyLong>0.30</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>Bullet_HG_LMG</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <range>28.9</range>
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <burstShotCount>8</burstShotCount>
+        <soundCast>Shot_Minigun</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>Turret_HG_ScyllaTurret</defName>
+    <label>VnS-10 Scylla HMG Emplacement</label>
+    <description>A Scylla HMG affixed to a turret base, slightly improving its stability, with an added gun shield to protect the user.</description>
+    <thingClass>Building_TurretGun</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <drawHighlight>true</drawHighlight>
+    <drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
+    <graphicData>
+      <texPath>Things/Helghast/Structures/Turretbases/TurretCommon_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.25,1.25)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.27,0.25,0.27)</volume>
+        <offset>(0,0,0)</offset>
+      </shadowData>
+    </graphicData>
+    <uiIconPath>Things/Helghast/Structures/Icons/TurretScylla_MenuIcon</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+	<hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <Flammability>0.2</Flammability>
+      <WorkToBuild>5500</WorkToBuild>
+      <Mass>9</Mass>
+      <Beauty>-20</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until barrel change</fuelLabel>
+        <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+        <outOfFuelMessage>Needs new barrel</outOfFuelMessage>
+        <fuelFilter><thingDefs><li>Steel</li></thingDefs></fuelFilter>
+        <fuelCapacity>100</fuelCapacity>
+        <fuelMultiplier>0.75</fuelMultiplier>
+        <initialFuelPercent>1</initialFuelPercent>
+        <autoRefuelPercent>0.5</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <factorByDifficulty>true</factorByDifficulty>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+      </li>
+	  <li Class="CompProperties_Mannable">
+        <manWorkType>Violent</manWorkType>
+      </li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.65</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <costList>
+      <Steel>100</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <building>
+      <turretGunDef>Gun_HG_ScyllaTurret</turretGunDef>
+	  <turretTopDrawSize>2</turretTopDrawSize>
+      <turretBurstCooldownTime>2.5</turretBurstCooldownTime>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
+	  <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>GunTurrets</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>Gun_HG_ScyllaTurret</defName>
+    <label>VnS-10 Scylla (Turret)</label>
+    <description>The short-lived arms dealer VnS attempted to break into the automatic squad weaponry market with the Scylla, a three barrel rotary 12.7 x 99 mm cartridge heavy machine gun platform. It is more accurate and devastating than the StA 3, but has crippling flaws in weight, a slow reload, and extreme expense, costing as much as three StA-3's. As a mounted HMG, the weapon becomes noticeably more accurate, making it fairly common at static frontline helghan command posts and trenches.</description>
+    <graphicData>
+      <texPath>Things/Helghast/Structures/Turrets/TurretScylla_Top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>6.5</Mass>
+      <AccuracyTouch>0.50</AccuracyTouch>
+      <AccuracyShort>0.60</AccuracyShort>
+      <AccuracyMedium>0.50</AccuracyMedium>
+      <AccuracyLong>0.40</AccuracyLong>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>Bullet_HG_S_HMG</defaultProjectile>
+        <warmupTime>1.5</warmupTime>
+        <range>30.9</range>
+        <ticksBetweenBurstShots>9</ticksBetweenBurstShots>
+        <burstShotCount>5</burstShotCount>
+        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_HG_S_HMG</defName>
+    <label>HMG bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>16</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>46</speed>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>Turret_HG_SirenTurret</defName>
+    <label>VnD-10M Siren Emplacement</label>
+    <description>A Siren Grenade Launcher affixed to a turret base, slightly improving its stability, with an added gun shield to protect the user.</description>
+    <thingClass>Building_TurretGun</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <drawHighlight>true</drawHighlight>
+    <drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
+    <graphicData>
+      <texPath>Things/Helghast/Structures/Turretbases/TurretCommon_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.25,1.25)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.27,0.25,0.27)</volume>
+        <offset>(0,0,0)</offset>
+      </shadowData>
+    </graphicData>
+    <uiIconPath>Things/Helghast/Structures/Icons/TurretSiren_MenuIcon</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+	<hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <Flammability>0.3</Flammability>
+      <WorkToBuild>5500</WorkToBuild>
+      <Mass>9</Mass>
+      <Beauty>-20</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until barrel change</fuelLabel>
+        <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+        <outOfFuelMessage>Needs new barrel</outOfFuelMessage>
+        <fuelFilter><thingDefs><li>Chemfuel</li></thingDefs></fuelFilter>
+        <fuelCapacity>10</fuelCapacity>
+        <fuelMultiplier>0.20</fuelMultiplier>
+        <initialFuelPercent>1</initialFuelPercent>
+        <autoRefuelPercent>0.5</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <factorByDifficulty>true</factorByDifficulty>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+      </li>
+	  <li Class="CompProperties_Mannable">
+        <manWorkType>Violent</manWorkType>
+      </li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.65</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <costList>
+      <Steel>80</Steel>
+	  <Chemfuel>100</Chemfuel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <building>
+      <turretGunDef>Gun_HG_SirenTurret</turretGunDef>
+	  <turretTopDrawSize>1.35</turretTopDrawSize>
+      <turretBurstCooldownTime>3</turretBurstCooldownTime>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
+	  <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>GunTurrets</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>Gun_HG_SirenTurret</defName>
+    <label>VnD-10M Siren (Turret)</label>
+    <description>The one lasting design VnD produced before being swallowed up by the Helghan megacorps, the VnD-10m is available in man-portable and emplacement form as a reliable no-nonsense automatic grenade launcher. Infantry like to use it on the go to cover assault teams or for base defense against swarm targets. It remains a heavy, cumbersome weapon. When deployed as an emplacement, most of its questionable accuracy concerns are dismissed.</description>
+    <graphicData>
+      <texPath>Things/Helghast/Structures/Turrets/TurretSiren_Top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>6.5</Mass>
+      <AccuracyTouch>0.50</AccuracyTouch>
+      <AccuracyShort>0.60</AccuracyShort>
+      <AccuracyMedium>0.50</AccuracyMedium>
+      <AccuracyLong>0.40</AccuracyLong>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>Bullet_HG_TurretGrenadeFrag</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <range>30.9</range>
+		<forcedMissRadius>2.9</forcedMissRadius>
+        <soundCast>Shot_IncendiaryLauncher</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+		<targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_HG_TurretGrenadeFrag</defName>
+    <label>frag grenade</label>
+    <graphicData>
+      <texPath>Things/Projectile/LauncherShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(254,189,58)</color>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <speed>20</speed>
+      <damageDef>Bomb</damageDef>
+      <!-- Use default damage from explosion def -->
+      <explosionRadius>1.9</explosionRadius>
+      <arcHeightFactor>0.2</arcHeightFactor>
+      <shadowSize>0.6</shadowSize>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Turret_HG_AutoTurret</defName>
+    <label>VC-116 Sentry Turret</label>
+    <description>A squad level answer to sentry turrets encountered across the Rim, the Visari Corporation envisioned the VC-116 with a sophisticated targeting AI capable of providing accurate long range fire beyond typical automated defense standards. That said, in typical Visari Corp style, it is expensive to deploy, and the term 'accurate fire' is relative. Notably the weapon comes in two unmarked variants: backpack deployed with a timed internal battery, and as a stationary base defense reliant on a power grid.</description>
+    <thingClass>Building_TurretGun</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <drawHighlight>true</drawHighlight>
+    <drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
+    <graphicData>
+      <texPath>Things/Helghast/Structures/Turretbases/TurretVC116_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.25,1.25)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.27,0.25,0.27)</volume>
+        <offset>(0,0,0)</offset>
+      </shadowData>
+    </graphicData>
+    <uiIconPath>Things/Helghast/Structures/Icons/TurretVC116_MenuIcon</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>false</rotatable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Flammability>0.4</Flammability>
+      <WorkToBuild>3500</WorkToBuild>
+      <Mass>7.5</Mass>
+      <Beauty>-20</Beauty>
+      <ShootingAccuracyTurret>0.9</ShootingAccuracyTurret>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>340</wickTicks>
+        <explosiveRadius>2.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+      </li>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until barrel change</fuelLabel>
+        <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+        <outOfFuelMessage>Needs new barrel</outOfFuelMessage>
+        <fuelFilter><thingDefs><li>Steel</li></thingDefs></fuelFilter>
+        <fuelCapacity>120</fuelCapacity>       <!-- 30 bursts -->
+        <fuelMultiplier>0.75</fuelMultiplier> <!-- 1.333 steel per burst, 80 per full rearm -->
+        <initialFuelPercent>1</initialFuelPercent>
+        <autoRefuelPercent>0.5</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <factorByDifficulty>true</factorByDifficulty>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+      </li>
+      <li Class="CompProperties_Stunnable">
+        <affectedDamageDefs>
+          <li>EMP</li>
+        </affectedDamageDefs>
+      </li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <costList>
+      <Steel>125</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <building>
+      <combatPower>55</combatPower>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Gun_HG_AutoTurret</turretGunDef>
+	  <turretTopDrawSize>1.25</turretTopDrawSize>
+      <turretBurstCooldownTime>2</turretBurstCooldownTime>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>GunTurrets</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>Gun_HG_AutoTurret</defName>
+    <label>VC-116 Sentry Gun</label>
+    <description>An automatic gun made to be mounted on a turret.</description>
+    <graphicData>
+      <texPath>Things/Helghast/Structures/Turrets/TurretVC116_Top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>0.60</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.55</AccuracyLong>
+      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>3</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>Bullet_HG_AssaultRifle</defaultProjectile>
+        <warmupTime>0.2</warmupTime>
+        <range>32.9</range>
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+        <burstShotCount>2</burstShotCount>
+        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+  <ThingDef Name="BaseHelghastAutoArtilleryBuilding" ParentName="BuildingBase" Abstract="True">
+    <thingClass>Building_TurretGun</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <drawHighlight>true</drawHighlight>
+    <drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Helghast/Structures/Turretbases/TurretGorgon_Base</texPath>
+      <drawSize>(3.5,5)</drawSize>
+	  <drawOffset>(0, 0, -0.2)</drawOffset>
+      <damageData>
+        <rect>(0.38,0.2,0.56375,0.8)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+      </damageData>
+      <shadowData>
+        <offset>(-0.13,-0.87,-0.1)</offset>
+        <volume>(0.5,0.4,1.05)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <hasInteractionCell>False</hasInteractionCell>
+    <stealable>false</stealable>
+	<rotatable>false</rotatable>
+    <size>(3,5)</size>
+    <passability>PassThroughOnly</passability>
+    <pathCost>100</pathCost>
+    <fillPercent>0.75</fillPercent>
+    <tickerType>Normal</tickerType>
+    <designationCategory>Security</designationCategory>
+    <constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>500</wickTicks>
+        <explosiveRadius>3.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+      </li>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>250</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0.2</Flammability>
+      <WorkToBuild>9500</WorkToBuild>
+      <Mass>120</Mass>
+      <Beauty>-25</Beauty>
+    </statBases>
+    <building>
+      <turretBurstWarmupTime>5.0</turretBurstWarmupTime>
+      <turretBurstCooldownTime>30.0</turretBurstCooldownTime>
+      <buildingTags>
+        <li>Artillery</li>
+      </buildingTags>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+	  <li>PlaceWorker_NotUnderRoof</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>Mortars</li>
+    </researchPrerequisites>
+    <uiIconScale>1</uiIconScale>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseHelghastAutoArtilleryBuilding">
+    <defName>Turret_HG_AutoMortar</defName>
+    <label>StA-120 A.M.S Gorgon</label>
+    <description>Before the development of the StA-X3 Helghan artillery crews struggled to find a suitable weapon for mid to small range engagements. The Gorgon was proposed reluctantly as a temporary measure, developed as a local installation for fixed defensive positions with promises made to render it self-propelled 'at a future time'. The gorgon was not called that originally- its a derogatory term thought up by frontline units forced to service the 'ugly, dangerous' construction, which had a habit of mangling limbs of maintenance crews and generally appeared to be 'ugly' to many garrison units.\n\nDEV-NOTE - check the gun itself for the full descriptions, basegame has an issue with long descriptions on buildings. will try to fix later</description>
+	<thingClass>TargetingAutoTurret.Building_TurretGunForceable</thingClass>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>240</wickTicks>
+        <explosiveRadius>4.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until barrel change</fuelLabel>
+        <fuelGizmoLabel>Magazine</fuelGizmoLabel>
+        <outOfFuelMessage>Needs new shells</outOfFuelMessage>
+        <fuelFilter><thingDefs><li>Shell_HighExplosive</li></thingDefs></fuelFilter>
+        <fuelIsMortarBarrel>true</fuelIsMortarBarrel>
+        <fuelCapacity>20</fuelCapacity>
+        <fuelMultiplier>1</fuelMultiplier>
+        <initialFuelPercent>0</initialFuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <initialAllowAutoRefuel>true</initialAllowAutoRefuel>
+        <autoRefuelPercent>0.1</autoRefuelPercent>
+        <fuelIconPath>Things/Item/Resource/ReinforcedBarrel/ReinforcedBarrel</fuelIconPath>
+      </li>
+      <li Class="CompProperties_Stunnable">
+        <affectedDamageDefs>
+          <li>EMP</li>
+        </affectedDamageDefs>
+      </li>
+    </comps>
+	<costList>
+      <Steel>300</Steel>
+      <ComponentIndustrial>12</ComponentIndustrial>
+	  <ReinforcedBarrel>4</ReinforcedBarrel>
+    </costList>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <building>
+      <turretGunDef>Artillery_HG_AutoMortar</turretGunDef>
+	  <turretTopDrawSize>5</turretTopDrawSize>
+      <turretTopOffset>(0, 0.5)</turretTopOffset>
+      <buildingTags>
+        <li>Artillery_BaseDestroyer</li>
+      </buildingTags>
+    </building>
+  <uiIconPath>Things/Helghast/Structures/Icons/TurretGorgon_MenuIcon</uiIconPath>
+  <uiIconScale>1</uiIconScale>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseArtilleryWeapon">
+    <defName>Artillery_HG_AutoMortar</defName>
+    <label>StA-120 A.M.S Gorgon (Gun)</label>
+    <description>Before the development of the StA-X3 Helghan artillery crews struggled to find a suitable weapon for mid to small range engagements. The Gorgon was proposed reluctantly as a temporary measure, developed as a local installation for fixed defensive positions with promises made to render it self-propelled 'at a future time'. The gorgon was not called that originally- its a derogatory term thought up by frontline units forced to service the 'ugly, dangerous' construction, which had a habit of mangling limbs of maintenance crews and generally appeared to be 'ugly' to many garrison units. The Gorgon's unique odd 'stilt' support tower was likely recycled- either from old water towers or orbital defense guns, repurposed to raise the turrets main gun up, a 'heavy mortar' light field gun, in order to get better firing angles without needing to carve into civilian buildings.\n\nThey were especially common around Salamun district in Pyrrhus, in set hidden killzones to harass high traffic areas as part of Radec's defense plan. The key feature of the gorgon is that once set, a central firing computer can run the gun autonomously, meaning local troops need only defend its exposed infrastructure. In ideal circumstances, Gorgons would be built into bunker complexes, covering the relatively weak support structure, exposing only the robust cannon itself on the roof. In reality during the siege of Pyrrhus these were set up in scattered urban sectors to optimize lines of fire and obscure them until it was time to strike.</description>
+    <recoilPower>2</recoilPower>
+    <graphicData>
+      <texPath>Things/Helghast/Structures/Turrets/TurretGorgon_Top</texPath>
+    </graphicData>
+    <weaponTags>
+      <li>Artillery_BaseDestroyer</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+		<defaultProjectile>Bullet_Shell_HighExplosive</defaultProjectile>
+        <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+        <warmupTime>4.0</warmupTime>
+        <forcedMissRadius>7</forcedMissRadius>
+        <forcedMissRadiusClassicMortars>7</forcedMissRadiusClassicMortars>
+        <isMortar>true</isMortar>
+        <requireLineOfSight>false</requireLineOfSight>
+        <minRange>39.9</minRange>
+        <range>750</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>Mortar_LaunchA</soundCast>
+        <muzzleFlashScale>16</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+  </ThingDef>
+
+</Defs>

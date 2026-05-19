@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  
+  <ThingDef ParentName= "HelghastArmorMachineableBase">
+    <defName>Apparel_HG_Shockcap</defName>
+    <label>Helghan Garrison Pilotka</label>
+    <description>These soft caps were typically associated with Helghan personnel who were off duty or serving during peacetime. During the war on the homeworld, rapidly organized light infantry units- (frustratingly called 'Shock Troopers' by the propaganda machine) wore them into combat. The cap was known to be light weight, simple to manufacture, and somewhat durable. As protective equipment however, it left much to be desired. Helghan troops would often scavenge friendly helmets to replace it in the field.</description>
+    <techLevel>Industrial</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>3</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+	  <displayPriority>301</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Helghast/ShockTrooper/Cap/kz2_shock_trooper_cap</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1</drawSize>
+    </graphicData>
+    <uiIconScale>1.25</uiIconScale>
+    <statBases>
+      <WorkToMake>1950</WorkToMake>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>0.5</Mass>
+      <Flammability>0.5</Flammability>
+      <ArmorRating_Sharp>0.09</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.04</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.06</ArmorRating_Heat>
+      <Insulation_Cold>2</Insulation_Cold>
+      <Insulation_Heat>6</Insulation_Heat>
+      <EquipDelay>0.8</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+	  <SocialImpact>0.15</SocialImpact>
+    </equippedStatOffsets>
+	<thingCategories>
+      <li>ArmorHeadgear</li>
+    </thingCategories>
+    <costList>
+	  <Cloth>30</Cloth>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+	    <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Helghast/ShockTrooper/Cap/kz2_shock_trooper_cap</wornGraphicPath>
+	  <renderSkipFlags>
+        <li>None</li>
+      </renderSkipFlags>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+	  <tags>
+        <li>HelghastShock</li>
+      </tags>
+      <useDeflectMetalEffect>true</useDeflectMetalEffect>
+    </apparel>
+  </ThingDef>
+  
+  <ThingDef ParentName= "HelghastArmorMachineableBase">
+    <defName>Apparel_HG_Officercap</defName>
+    <label>Shock Army Junior Officer's Cap</label>
+    <description>The Junior officer corps, who have always been known for their bloodlust- was particularly aggressive in shock units. Sometimes mistaken for sergeants, shock army lieutenants- particularly droves of 2nd Lieutenants, would often take up squad command to seize key objectives and earn glory for the Empire. This 'wasteful' use of officers meant that military colleges would quietly send 'excess' or 'less qualified' personnel to the shock armies, whilst the regular military hoarded talented officials. This bickering and factionalism even within the ground forces remains a feature even today.</description>
+    <techLevel>Industrial</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+	  <displayPriority>302</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Helghast/ShockTrooper/Capfancy/kz1_officer_cap</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1</drawSize>
+    </graphicData>
+    <uiIconScale>1.25</uiIconScale>
+    <statBases>
+      <WorkToMake>2150</WorkToMake>
+      <MaxHitPoints>105</MaxHitPoints>
+      <Mass>0.5</Mass>
+      <Flammability>0.5</Flammability>
+      <ArmorRating_Sharp>0.09</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.04</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.06</ArmorRating_Heat>
+      <Insulation_Cold>2</Insulation_Cold>
+      <Insulation_Heat>6</Insulation_Heat>
+      <EquipDelay>0.8</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+	  <SocialImpact>0.20</SocialImpact>
+	  <PainShockThreshold>0.05</PainShockThreshold>
+    </equippedStatOffsets>
+	<thingCategories>
+      <li>ArmorHeadgear</li>
+    </thingCategories>
+    <costList>
+	  <Cloth>40</Cloth>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+	    <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Helghast/ShockTrooper/Capfancy/kz1_officer_cap</wornGraphicPath>
+	  <renderSkipFlags>
+        <li>None</li>
+      </renderSkipFlags>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+	  <tags>
+        <li>HelghastOfficer</li>
+      </tags>
+      <useDeflectMetalEffect>true</useDeflectMetalEffect>
+    </apparel>
+  </ThingDef>
+  
+  <ThingDef ParentName= "HelghastArmorMachineableBase">
+    <defName>Apparel_HG_Officerhat</defName>
+    <label>Helghan Officer Hat</label>
+    <description>Typically worn by commissioned officers ranked captain and above, and usually in safe rear echelon posts, this authoritative cap is a sign of distinction - few such pieces of clothing are produced, as the Helghan military usually wishes to encourage frontline service among its officer corps. These were perhaps more commonly seen during peacetime or at important state events. Regardless, its a symbol of power in the regime. Some officers believe in wearing this despite the risks is worth it for the confidence it exudes for its wearer.</description>
+    <techLevel>Industrial</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+	  <displayPriority>303</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Helghast/ShockTrooper/Hat/kzm_officer_hat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1</drawSize>
+    </graphicData>
+    <uiIconScale>1.25</uiIconScale>
+    <statBases>
+      <WorkToMake>3000</WorkToMake>
+      <MaxHitPoints>105</MaxHitPoints>
+      <Mass>0.65</Mass>
+      <Flammability>0.5</Flammability>
+      <ArmorRating_Sharp>0.09</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.07</ArmorRating_Heat>
+      <Insulation_Cold>4</Insulation_Cold>
+      <Insulation_Heat>8</Insulation_Heat>
+      <EquipDelay>0.8</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+	  <SocialImpact>0.40</SocialImpact>
+    </equippedStatOffsets>
+	<thingCategories>
+      <li>ArmorHeadgear</li>
+    </thingCategories>
+    <costList>
+	  <Cloth>40</Cloth>
+	  <Gold>1</Gold>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+	    <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Helghast/ShockTrooper/Hat/kzm_officer_hat</wornGraphicPath>
+	  <renderSkipFlags>
+        <li>None</li>
+      </renderSkipFlags>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+	  <tags>
+        <li>HelghastOfficerHigh</li>
+      </tags>
+      <useDeflectMetalEffect>true</useDeflectMetalEffect>
+    </apparel>
+  </ThingDef>
+  
+</Defs>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <ThingDef ParentName="HelghastBaseHumanMakeableGun">
+    <defName>Gun_HG_STA18handgun</defName>
+    <label>StA-18</label>
+    <description>Reliable, iconic, and mass produced, this pistol was the standard for Helghan handheld firearms. Almost indistinguishable in performance from normal auto pistols found across the rim, the Sta-18 is unique in one simple way; it is slightly cheaper, and noticeably faster and easier to construct; so easy, it was once said in a Stahl Arms advertisement, that even a child could assemble one, and as it turns out? They often did.</description>
+    <techLevel>Industrial</techLevel>
+	<graphicData>
+      <texPath>Things/Helghast/Weapons/STA18</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1</drawSize>
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <soundInteract>Interact_SMG</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>3</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+      <displayPriority>701</displayPriority>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>4250</WorkToMake>
+      <Mass>1.2</Mass>
+      <AccuracyTouch>0.80</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.40</AccuracyMedium>
+      <AccuracyLong>0.30</AccuracyLong>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>25</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+	<weaponTags>
+	 <li>HelghastSidearmBasic</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_SA18bullet</defaultProjectile>
+        <warmupTime>0.3</warmupTime>
+        <range>24.9</range>
+        <soundCast>Shot_Autopistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>1.8</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_SA18bullet</defName>
+    <label>SA18 round</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>10</damageAmountBase>
+      <speed>55</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="HelghastBaseHumanMakeableGun">
+    <defName>Gun_HG_SFOX</defName>
+    <label>S-FOX</label>
+    <description>Created to satisfy demands from tankers in the 'Shock' armies for a smaller, better personal defense weapon, the S-FOX was an unexpected coup in terms of design success. Effectively an overdesigned Tropov, the S-FOX is a fully automatic machine-pistol with good accuracy and excellent rate of fire. In trials it impressed the Helghan directory, but scored poorly when it came to production feasability and field testing - too expensive, too heavy, to slow to produce. Police and paramilitaries from all over the rim clamor for just such a sidearm however.</description>
+    <techLevel>Industrial</techLevel>
+	<graphicData>
+      <texPath>Things/Helghast/Weapons/SFOX</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.05</drawSize>
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <soundInteract>Interact_SMG</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+      <displayPriority>702</displayPriority>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>20000</WorkToMake>
+      <Mass>2.9</Mass>
+      <AccuracyTouch>0.90</AccuracyTouch>
+      <AccuracyShort>0.65</AccuracyShort>
+      <AccuracyMedium>0.40</AccuracyMedium>
+      <AccuracyLong>0.20</AccuracyLong>
+      <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+	<weaponTags>
+	 <li>HelghastSidearm</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_SFOX</defaultProjectile>
+        <warmupTime>0.4</warmupTime>
+        <range>20.9</range>
+        <burstShotCount>4</burstShotCount>
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <soundCast>Shot_MachinePistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.8</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_SFOX</defName>
+    <label>SFOX round</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>7</damageAmountBase>
+      <speed>55</speed>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="HelghastBaseHumanMakeableGun">
+    <defName>Gun_HG_StA11g</defName>
+    <label>StA-11 SMG</label>
+    <description>Originally envisioned as a tanker and rear echelon weapon, the StA-11 was an early Stahl Arms production that saw service in the Helghan Corporation security forces as well as the Helghan civil war. Since then its become increasingly popular as a light infantry weapon thanks to its light weight, easy ergonomics, and dirt-cheap manufacture. It comes equipped with an integrated helical magazine that has been iterated upon to prevent jamming. In many ways this is a primordial weapon for Stahl arms- teaching the corporate weapons department many of the lessons perfected in the development of the StA-52. Even decades later, this weapon is still produced for use in police and penal units.</description>
+	<techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Helghast/Weapons/STA11</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>GasOperation</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+      <displayPriority>703</displayPriority>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>20000</WorkToMake>
+      <Mass>3.1</Mass>
+      <AccuracyTouch>0.85</AccuracyTouch>
+      <AccuracyShort>0.55</AccuracyShort>
+      <AccuracyMedium>0.25</AccuracyMedium>
+      <AccuracyLong>0.10</AccuracyLong>
+      <RangedWeapon_Cooldown>1.15</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+	<weaponTags>
+	 <li>HelghastSMG</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_STA11g</defaultProjectile>
+        <warmupTime>0.6</warmupTime>
+        <range>20.9</range>
+        <burstShotCount>5</burstShotCount>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <soundCast>Shot_MachinePistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>7</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_STA11g</defName>
+    <label>StA-11 round</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>8</damageAmountBase>
+      <speed>60</speed>
+    </projectile>
+  </ThingDef>
+
+</Defs>

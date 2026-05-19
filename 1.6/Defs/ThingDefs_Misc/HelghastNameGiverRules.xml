@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <RulePackDef>
+    <defName>NamerHelghastJuntaFaction</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->[HelghanDivision] [HelghanArmyPurpose] [HelghanArmyTerm]</li>
+		<li>r_name->[HelghanPlanet] [HelghanDivision] [HelghanArmyTerm]</li>
+      </rulesStrings>
+	  <rulesFiles>
+	   <li>HelghanDivision->Names/HelghanDivision</li>
+	   <li>HelghanArmyPurpose->Names/HelghanArmyPurpose</li>
+	   <li>HelghanArmyTerm->Names/HelghanArmyTerm</li>
+	   <li>HelghanPlanet->Names/HelghanPlanet</li>
+	  </rulesFiles>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerHelghastJuntaSettlement</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->[HelghanSettlementNames] [HelghanSettlementTypes]</li>
+      </rulesStrings>
+	  <rulesFiles>
+	   <li>HelghanSettlementNames->Names/HelghanSettlementNames</li>
+	   <li>HelghanSettlementTypes->Names/HelghanSettlementTypes</li>
+	  </rulesFiles>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>NamerHelghastPersonM</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->[HelghastFirstNameMale] [HelghastNameLast]</li>
+      </rulesStrings>
+	  <rulesFiles>
+	   <li>HelghastFirstNameMale->Names/HelghastMale</li>
+	   <li>HelghastNameLast->Names/HelghastLast</li>
+	  </rulesFiles>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>NamerHelghastPersonF</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->[HelghastFirstNameFemale] [HelghastNameLast]</li>
+      </rulesStrings>
+	  <rulesFiles>
+	   <li>HelghastFirstNameFemale->Names/HelghastFemale</li>
+	   <li>HelghastNameLast->Names/HelghastLast</li>
+	  </rulesFiles>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>NamerHelghastPerson</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->[HelghastFirstNameMale] [HelghastNameLast]</li>
+        <li>r_name->[HelghastFirstNameFemale] [HelghastNameLast]</li>
+      </rulesStrings>
+	  <rulesFiles>
+	   <li>HelghastFirstNameMale->Names/HelghastMale</li>
+	   <li>HelghastFirstNameFemale->Names/HelghastFemale</li>
+	   <li>HelghastNameLast->Names/HelghastLast</li>
+	  </rulesFiles>
+    </rulePack>
+  </RulePackDef>
+  
+</Defs>

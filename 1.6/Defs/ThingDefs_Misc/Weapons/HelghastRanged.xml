@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <ThingDef ParentName="HelghastBaseHumanMakeableGun">
+    <defName>Gun_HG_StA14g</defName>
+    <label>StA-14 Battle Rifle</label>
+    <description>Technically older than the helghan Empire by a few decades, Stahl Arms' first rifle was an acclaimed hit. The corporate authority of the time wanted an accurate, low ROF weapon capable of outranging foes to protect Helghast lives. As Visari's regime changed doctrine, this battle rifle remained an oddity- never being fully replaced, and consistently performing well in trials. In time these were shifted to rear echelon homeworld reservist forces, only for it again to see service in the defense of Helghan. This weapon did much to convince the burgeoning regime to grant Stahl the contracting rights to the Sta-52. Even today it remains popular in rimworld colonies as a hunting piece.</description>
+	<techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Helghast/Weapons/STA14</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+    <equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>PrecisionRifling</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+      <displayPriority>801</displayPriority>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>21500</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>0.70</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.80</AccuracyLong>
+      <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>70</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <weaponTags>
+	 <li>HelghastMain</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_STA14g</defaultProjectile>
+        <warmupTime>1.6</warmupTime>
+        <range>37.9</range>
+        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_STA14g</defName>
+    <label>StA14 round</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>19</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="HelghastBaseHumanMakeableGun">
+    <defName>Gun_HG_StA52g</defName>
+    <label>StA-52 Light Assault Rifle</label>
+    <description>The StA-52 is in some ways what put Stahl Arms on the map and made them the megacorporation they are today. Seen in every single armed conflict the Helghast have been involved in, its a bold design, a bullpup with a quick swap helical glass magazine, integrated red dot optic, and underslung shotgun. By urb standards, it is simply excellent, suffering only slightly in weight, accuracy, and production cost/complexity.</description>
+	<techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Helghast/Weapons/STA52</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>PrecisionRifling</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>7</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+      <displayPriority>802</displayPriority>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>52500</WorkToMake>
+      <Mass>4.5</Mass>
+      <AccuracyTouch>0.60</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.55</AccuracyLong>
+      <RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>9</ComponentIndustrial>
+    </costList>
+    <weaponTags>
+	 <li>HelghastMain</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_HG_AssaultRifle</defaultProjectile>
+        <warmupTime>1.0</warmupTime>
+        <range>30.9</range>
+        <burstShotCount>4</burstShotCount>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+	<comps>
+      <li Class="CompProperties_EquippableAbility">
+        <abilityDef>StA52pellets</abilityDef>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_HG_AssaultRifle</defName>
+    <label>StA52 round</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>11</damageAmountBase>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+  
+  <!--Compared to the flagship product of Stahl Arms, the STA-52 V2 is alot like any other remake, lower quality and cheaply made. Still a fine gun in its own right, its only used in times of desperation or great national threat.-->
+  
+  <ThingDef ParentName="HelghastBaseHumanMakeableGun">
+    <defName>Gun_HG_StA52gII</defName>
+    <label>StA-52 V2 Rifle</label>
+    <description>Stahl Arms' signature weapon, arguably their single greatest product in terms of sales targets and mass appeal, the StA-52 v2 is often mistaken for the V1 rifle, with casual observers forgetting is more complicated design used in the Helghan shock armies. This is because while the 'v1' did receive large scale deployment in those divisions, the rest of the Helghan military was standardized on the v2. In truth the v2 variant of the rifle is not actually an improvement on the design in any meaningful way, but a considerable downgrade- so for propaganda reasons both guns are referred to by the same name- the 'v1 and v2' designations are limited only to internal corporate documentation and ISA armory manifests. Regardless, the same caseless ammunition is used, the weapon length is noticeably shorter, which cut down on weight and costs compared to its predeccessor. The underslung shotgun and integrated optic were removed in favor of rails and a built in flashlight, which typically were not used. This weapon was designed by Committee to meet late war production targets. By the wars end, enough StA-52's were produced to arm every single Helghan man, woman, and child.</description>
+	<techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Helghast/Weapons/STA52_v2</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+    <equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>PrecisionRifling</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+      <displayPriority>803</displayPriority>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>38500</WorkToMake>
+      <Mass>4</Mass>
+      <AccuracyTouch>0.60</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.60</AccuracyMedium>
+      <AccuracyLong>0.45</AccuracyLong>
+      <RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>65</Steel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <weaponTags>
+	 <li>HelghastMain</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_HG_AssaultRifle</defaultProjectile>
+        <warmupTime>1.0</warmupTime>
+        <range>28.9</range>
+        <burstShotCount>4</burstShotCount>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="HelghastBaseHumanMakeableGun">
+    <defName>Gun_HG_StA409g</defName>
+    <label>StA-409 Keyzer</label>
+    <description>Allegedly commissioned by Hera Visari herself as part of an initiative to modernize Helghan armaments, the '409 is a staple of post-diaspora regimes. When Stahl Arms was told to iterate upon their iconic assault rifle, they took lessons learned from latter production years and rolled them into the 409, No overcomplicated  dual weapon system, balanced ultralight materials, and a focus on mass production. The Keyzer is an oddity- clearly a post-industrial design by a spacer tech civilization, but lacking any sophisticated technology, It was an attempt to create a modernized ballistic weapon capable of being rolled out army-wide in a rapidly evolving technological climate.\n\nIt does require a small amount of high grade metals for parts of the rifling and internal components, and its performance pales compared to the raw power of true energy weapons, but its quick to assemble, durable, and superior to conventional industrial assault rifles in just about every way.</description>
+	<techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Helghast/Weapons/STA409</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+	<equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>PrecisionRifling</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>7</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+      <displayPriority>804</displayPriority>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>68500</WorkToMake>
+      <Mass>5.5</Mass>
+      <AccuracyTouch>0.62</AccuracyTouch>
+      <AccuracyShort>0.72</AccuracyShort>
+      <AccuracyMedium>0.67</AccuracyMedium>
+      <AccuracyLong>0.57</AccuracyLong>
+      <RangedWeapon_Cooldown>1.55</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+	  <Plasteel>10</Plasteel>
+	  <Uranium>1</Uranium>
+      <Steel>75</Steel>
+      <ComponentIndustrial>9</ComponentIndustrial>
+    </costList>
+    <weaponTags>
+	 <li>HelghastMainEliteSpace</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_HG_AssaultRifleSpacer</defaultProjectile>
+        <warmupTime>1.0</warmupTime>
+        <range>31.9</range>
+        <burstShotCount>4</burstShotCount>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_HG_AssaultRifleSpacer</defName>
+    <label>StA409 round</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>13</damageAmountBase>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="HelghastBaseHumanMakeableGun">
+    <defName>Gun_HG_StA59B</defName>
+    <label>StA-59B Pulver</label>
+    <description>Sometimes innovation requires radical re-evaluation of core design philosophy. Stahl Arms, asked for the next generation of mass produced infantry rifles, proposed numerous options to prevent VnS or Visari Corporation from stealing lucrative arms contracts. One of the results of this contract was the Pulver, a semi automatic battle rifle. The antiquated Sta-14 was nearing its end of life service even before the regime's wars began in earnest, The Pulver is the long awaited update; technically a semi automatic assault rifle, its armor piercing depleted uranium rounds defeat most infantry armor systems reliably. This next gen weapon was intended for designated marksmen to pick of high profile threats whilst the riflemen lay down coverfire, it was an example of Stahl's commitment to dominating the squad level ordinance industry.</description>
+	<techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Helghast/Weapons/StA59B</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+    <equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>PrecisionRifling</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>7</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>HG_Foundry</li>
+      </recipeUsers>
+      <displayPriority>805</displayPriority>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>46500</WorkToMake>
+      <Mass>4.3</Mass>
+      <AccuracyTouch>0.73</AccuracyTouch>
+      <AccuracyShort>0.87</AccuracyShort>
+      <AccuracyMedium>0.92</AccuracyMedium>
+      <AccuracyLong>0.83</AccuracyLong>
+      <RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+	  <Plasteel>15</Plasteel>
+	  <Uranium>1</Uranium>
+      <Steel>70</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <weaponTags>
+	 <li>HelghastMainEliteSpace</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_StA59B</defaultProjectile>
+        <warmupTime>1.5</warmupTime>
+        <range>38.9</range>
+        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_StA59B</defName>
+    <label>StA59B round</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>22</damageAmountBase>
+      <stoppingPower>2</stoppingPower>
+      <speed>70</speed>
+    </projectile>
+  </ThingDef>
+  
+  <AbilityDef>
+    <defName>StA52pellets</defName>
+    <label>Underbarrel Blast</label>
+    <description>Fires a blast from the underbarrel shotgun.</description>
+    <iconPath>Things/Helghast/Weapons/STA52</iconPath>
+    <cooldownTicksRange>5200</cooldownTicksRange>
+	<charges>1</charges>
+    <displayOrder>100</displayOrder>
+    <aiCanUse>true</aiCanUse>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>5.9</range>
+	  <minRange>0.0</minRange>
+      <warmupTime>0.3</warmupTime>
+	  <forcedMissRadius>0</forcedMissRadius>
+      <soundCast>Shot_Shotgun</soundCast>
+	  <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+		<canTargetPawns>true</canTargetPawns>
+      </targetParams>
+    </verbProperties>
+    <comps>
+     <li Class="AbilityShotgun.CompProperties_AbilityShotgun">
+      <pellets>6</pellets>
+      <projectileDef>Bullet_STA52gpellet</projectileDef>
+     </li>
+    </comps>
+  </AbilityDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_STA52gpellet</defName>
+    <label>shotgun blast</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>2</damageAmountBase>
+      <stoppingPower>1.4</stoppingPower>
+      <armorPenetrationBase>0.1</armorPenetrationBase>
+      <speed>60</speed>
+    </projectile>
+  </ThingDef>
+
+</Defs>

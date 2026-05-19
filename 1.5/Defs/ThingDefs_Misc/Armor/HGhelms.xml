@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <ThingDef ParentName= "HelghastArmorMachineableBase">
+    <defName>Apparel_HG_Tacthelm</defName>
+    <label>Helghast Tactical Helmet</label>
+    <description>The iconic symbol of the Helghan armed forces, and the bare minimum for any soldier committed to their cause, the tac helmet and gasmask are considered formidable urb and midworld tech for a mass production line infantryman's gear. Assembled quickly and neatly with composite plates, the tac helmet is designed to absorb sharpnel and small arms calibers. Ear pieces aid the unit in dampening loud noises at minimal cost to situational awareness. Coupled with the baleful eyes of the iconic helghan gas mask, this symbol- the unremiting gaze of a faceless soldier- has become someting of a propaganda darling for the regime. The combination is known to negatively impact social relations- even among other helghast, who have a hard time reading expressions whilst wearing this kit.</description>
+    <techLevel>Industrial</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+      <researchPrerequisite>FlakArmor</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+      </recipeUsers>
+	  <displayPriority>101</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Helghast/Assault/Helmet/AssaultHelmet_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1</drawSize>
+    </graphicData>
+    <uiIconScale>1.25</uiIconScale>
+    <statBases>
+      <WorkToMake>10000</WorkToMake>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Mass>1.5</Mass>
+      <Flammability>0.1</Flammability>
+      <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.30</ArmorRating_Heat>
+      <Insulation_Cold>6</Insulation_Cold>
+      <Insulation_Heat>3</Insulation_Heat>
+      <EquipDelay>2.5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+	  <ToxicEnvironmentResistance>0.85</ToxicEnvironmentResistance>
+	  <SocialImpact>-0.1</SocialImpact>
+	  <MentalBreakThreshold>-0.05</MentalBreakThreshold>
+    </equippedStatOffsets>
+	<thingCategories>
+      <li>ArmorHeadgear</li>
+    </thingCategories>
+    <costList>
+	  <Steel>50</Steel>
+	  <Plasteel>10</Plasteel>
+	  <ComponentIndustrial>2</ComponentIndustrial>
+	  <Chemfuel>25</Chemfuel>
+	  <Cloth>10</Cloth>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Helghast/Assault/Helmet/AssaultHelmet</wornGraphicPath>
+	  <tags>
+        <li>HelghastAssault</li>
+      </tags>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <useDeflectMetalEffect>true</useDeflectMetalEffect>
+    </apparel>
+  </ThingDef>
+  
+  <ThingDef ParentName= "HelghastArmorMachineableBase">
+    <defName>Apparel_HG_Tactrebreather</defName>
+    <label>Helghast Rebreather</label>
+    <description>The iconic symbol of the helghan struggle against their world, these masks are derived from mining gear utilized by the now-defunct Helghan Corporation. For a long time on Helghan, life or death was determined by ones access to this piece of equipment. Successive design iterations have improved its comfort for long-term usage and hostile conditions, but even today the modern masks worn differ little between civilian and military issue. Although the Helghast have physically adapted to no longer need these systems to survive on most of their home planet, they remain an essential component of the army, and a symbol of the perseverance of the people who used them. Compared to typical industrial gasmasks on the rim, this device is warmer, and more sturdy, providing limited protection to the eyes mouth and face, but other cultures are sometimes loathe to use them due to the negative associations with the Helghast people and the cold, inhumane baleful gaze it gives its bearer.</description>
+    <techLevel>Industrial</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedMask</unfinishedThingDef>
+      <researchPrerequisite>Machining</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+      </recipeUsers>
+	  <displayPriority>102</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Helghast/Assault/Helmet/AssaultMask_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1</drawSize>
+    </graphicData>
+    <uiIconScale>1.25</uiIconScale>
+    <statBases>
+      <WorkToMake>7500</WorkToMake>
+      <MaxHitPoints>105</MaxHitPoints>
+      <Mass>0.7</Mass>
+      <Flammability>0.1</Flammability>
+      <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.05</ArmorRating_Heat>
+      <Insulation_Cold>3</Insulation_Cold>
+      <Insulation_Heat>1</Insulation_Heat>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+	  <ToxicEnvironmentResistance>0.85</ToxicEnvironmentResistance>
+	  <SocialImpact>-0.1</SocialImpact>
+	  <MentalBreakThreshold>-0.05</MentalBreakThreshold>
+	  <WorkSpeedGlobal>0.05</WorkSpeedGlobal>
+    </equippedStatOffsets>
+	<thingCategories>
+      <li>ArmorHeadgear</li>
+    </thingCategories>
+    <costList>
+      <Steel>30</Steel>
+	  <Chemfuel>25</Chemfuel>
+	  <Cloth>10</Cloth>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+	    <li>Eyes</li>
+	    <li>Mouth</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Helghast/Assault/Helmet/AssaultMask</wornGraphicPath>
+	  <layers>
+       <li>EyeCover</li>
+      </layers>
+	  <tags>
+        <li>HelghastAssault</li>
+      </tags>
+      <useDeflectMetalEffect>true</useDeflectMetalEffect>
+    </apparel>
+  </ThingDef>
+  
+  <ThingDef ParentName= "HelghastArmorMachineableBase">
+    <defName>Apparel_HG_Riflehelm</defName>
+    <label>Helghast Veiled Tactical Helmet</label>
+    <description>A derivative of the standard tactical helm, many regular units of the army opt to use veils to mask the outline of their gas hoses, these veils eventually became optional attachments. A modicum of effort was put towards allowing veils to mask heat signatures to help infantry hide from IR/heat sensors, but these efforts were largely considered failures. The infantry's fascination with this idea of "further masking the face" was noted for later armor designs, For the riflemen however, it merely represents a desire by its users to gain some small edge in combat. Some swear it helps them hunt and forage, working well with shooting blinds and camouflage, but this claim seems dubious and some officers ban the practice of wearing this outright.</description>
+    <techLevel>Industrial</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+      <researchPrerequisite>FlakArmor</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+      </recipeUsers>
+	  <displayPriority>103</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Helghast/Rifleman/Helmet/RiflemanHelmet_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1</drawSize>
+    </graphicData>
+    <uiIconScale>1.25</uiIconScale>
+    <statBases>
+      <WorkToMake>11500</WorkToMake>
+      <MaxHitPoints>210</MaxHitPoints>
+      <Mass>1.6</Mass>
+      <Flammability>0.2</Flammability>
+      <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.42</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.30</ArmorRating_Heat>
+      <Insulation_Cold>8</Insulation_Cold>
+      <Insulation_Heat>4</Insulation_Heat>
+      <EquipDelay>2.5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+	  <ToxicEnvironmentResistance>0.90</ToxicEnvironmentResistance>
+	  <SocialImpact>-0.15</SocialImpact>
+	  <MentalBreakThreshold>-0.05</MentalBreakThreshold>
+	  <HuntingStealth>0.15</HuntingStealth>
+    </equippedStatOffsets>
+	<thingCategories>
+      <li>ArmorHeadgear</li>
+    </thingCategories>
+    <costList>
+	  <Steel>50</Steel>
+	  <Plasteel>10</Plasteel>
+	  <ComponentIndustrial>2</ComponentIndustrial>
+	  <Chemfuel>25</Chemfuel>
+	  <Cloth>25</Cloth>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Helghast/Rifleman/Helmet/RiflemanHelmet</wornGraphicPath>
+	  <tags>
+        <li>HelghastRiflemen</li>
+      </tags>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <useDeflectMetalEffect>true</useDeflectMetalEffect>
+    </apparel>
+  </ThingDef>
+  
+  <ThingDef ParentName= "HelghastArmorMachineableBase">
+    <defName>Apparel_HG_Grenhelm</defName>
+    <label>Quad-Ocular HGMk.2 Tactical Helmet</label>
+    <description>These helmets have gained the nickname 'Four-eyes' for obvious reasons. Meant for urban combat, these optics are intended to provide the user with a greater awareness of his surroundings. Corners were cut in development to lower production costs and prevent the need for advanced components, so much of this attempt would be said to be a failure by urbworld standards. Still, it is cheap. The veil here has been reinforced with a weighted Kevlar weave in the attempt to protect hoses and mask architecture. Grenadiers are often used as frontline sappers and combat engineers in their units, and are expected to deploy their explosives in close urban encounters. In reality, grenadiers try to keep distance, knowing full well that the so called much vaunted 'mark 2 helmet' provides little real difference in the life expectancy of helghast infantry. In truth, this headgear is sturdier than most of the Helghan armed forces equipment.</description>
+    <techLevel>Industrial</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+      <researchPrerequisite>FlakArmor</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+      </recipeUsers>
+	  <displayPriority>104</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Helghast/Grenadier/Helmet/GrenadierHelmet_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1</drawSize>
+    </graphicData>
+    <uiIconScale>1.25</uiIconScale>
+    <statBases>
+      <WorkToMake>14500</WorkToMake>
+      <MaxHitPoints>235</MaxHitPoints>
+      <Mass>2.5</Mass>
+      <Flammability>0.2</Flammability>
+      <ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.35</ArmorRating_Heat>
+      <Insulation_Cold>10</Insulation_Cold>
+      <Insulation_Heat>4</Insulation_Heat>
+      <EquipDelay>3</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+	  <ToxicEnvironmentResistance>0.90</ToxicEnvironmentResistance>
+	  <SocialImpact>-0.15</SocialImpact>
+	  <MentalBreakThreshold>-0.05</MentalBreakThreshold>
+	  <ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+    </equippedStatOffsets>
+	<thingCategories>
+      <li>ArmorHeadgear</li>
+    </thingCategories>
+    <costList>
+	  <Steel>55</Steel>
+	  <Plasteel>15</Plasteel>
+	  <ComponentIndustrial>3</ComponentIndustrial>
+	  <Chemfuel>25</Chemfuel>
+	  <Cloth>15</Cloth>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Helghast/Grenadier/Helmet/GrenadierHelmet</wornGraphicPath>
+	  <tags>
+        <li>HelghastGrenadier</li>
+      </tags>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <useDeflectMetalEffect>true</useDeflectMetalEffect>
+    </apparel>
+  </ThingDef>
+
+</Defs>

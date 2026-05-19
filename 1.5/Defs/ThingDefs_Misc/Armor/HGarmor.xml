@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <ThingDef ParentName="HelghastArmorMachineableBase">
+    <defName>Apparel_HG_Assault</defName>
+    <label>Helghast Assault Armor</label>
+    <description>In many ways the foundational infantry kit of the entire army, the assault loadout forgoes the trench coat for unrestrictive gear optimized for tight urban fights. Whilst technically unimpressive, the assault kit is a conservative idea built on centuries of human combat experience. Replaceable armor plates created to dampen rifle caliber rounds to the chest, whilst the tox-resistant uniform mesh is worn overtop of the body, fitted to prevent slowdown via series of small straps. The outfit is warm to wear, but not so much that it is unusable in arid warmer climates. Every suit bears an integrated replaceable air recycler unit, and a supply of fast acting sealant to patch up suit damage. Nevertheless, in the face of armor piercing rounds, well aimed shots, and charge weaponry, this gear falls short. Perhaps its greatest achievement is simply in being slightly more maneuverable than regular flak gear. Propaganda insists the fibers are flame retardant, but evidence from the frontline suggests otherwise.</description>
+    <techLevel>Industrial</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+      <researchPrerequisite>FlakArmor</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+      </recipeUsers>
+	  <displayPriority>1</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Helghast/Assault/AssaultOnSkin_Male_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToMake>22500</WorkToMake>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Mass>10</Mass>
+      <Flammability>0.25</Flammability>
+      <ArmorRating_Sharp>0.90</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.30</ArmorRating_Heat>
+      <Insulation_Cold>18</Insulation_Cold>
+      <Insulation_Heat>5</Insulation_Heat>
+      <EquipDelay>3</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+	  <MoveSpeed>0.05</MoveSpeed>
+	  <ToxicEnvironmentResistance>0.05</ToxicEnvironmentResistance>
+    </equippedStatOffsets>
+    <thingCategories>
+      <li>ApparelArmor</li>
+    </thingCategories>
+    <costList>
+	  <Steel>135</Steel>
+	  <ComponentIndustrial>3</ComponentIndustrial>
+	  <Cloth>90</Cloth>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+	  <tags>
+        <li>HelghastAssault</li>
+      </tags>
+      <wornGraphicPath>Things/Helghast/Assault/AssaultOnSkin</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+    </apparel>
+	<modExtensions>
+     <li Class="taranchuk_apparelgraphics.ApparelExtension">
+      <hideBody>False</hideBody>
+      <femaleBody>Male</femaleBody>
+      <maleBody>Male</maleBody>
+     </li>
+    </modExtensions>
+  </ThingDef>
+  
+  <ThingDef ParentName="HelghastArmorMachineableBase">
+    <defName>Apparel_HG_Riflemen</defName>
+    <label>Helghast Rifleman Trench-kit</label>
+    <description>Originally seen as a reservist outfit, the 'Trench-kit' - so named for the riflemen oft expected to hold static positions and its notable trench-coat, performs roughly the same as the assault kit, with the benefit of being more comfortable in cold conditions. Sometimes used as a poor mans stand-in for proper cold weather gear, this outfits reputation changed during the invasion of the Helghan home world, where it became far more prevalent among rapidly trained or conscripted infantry detachments. Despite technically being slightly better protection than typical assault standard issue, owing to the thick trench coat, the Helghan Empire typically only produces this gear in times of great need. For distant outposts in the far north or south, this gear can be considered lifesaving. Of course, it retains all its tox resistant properties it had with the assault load.</description>
+    <techLevel>Industrial</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+      <researchPrerequisite>FlakArmor</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+      </recipeUsers>
+	  <displayPriority>2</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Helghast/Rifleman/RiflemanOnSkin_Male_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToMake>23500</WorkToMake>
+      <MaxHitPoints>275</MaxHitPoints>
+      <Mass>12</Mass>
+      <Flammability>0.3</Flammability>
+      <ArmorRating_Sharp>0.90</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.50</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.30</ArmorRating_Heat>
+      <Insulation_Cold>30</Insulation_Cold>
+      <Insulation_Heat>15</Insulation_Heat>
+      <EquipDelay>3.5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+	  <MoveSpeed>-0.05</MoveSpeed>
+	  <ToxicEnvironmentResistance>0.10</ToxicEnvironmentResistance>
+    </equippedStatOffsets>
+    <thingCategories>
+      <li>ApparelArmor</li>
+    </thingCategories>
+    <costList>
+	  <Steel>135</Steel>
+	  <ComponentIndustrial>3</ComponentIndustrial>
+	  <Cloth>125</Cloth>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+	  <tags>
+        <li>HelghastRiflemen</li>
+      </tags>
+      <wornGraphicPath>Things/Helghast/Rifleman/RiflemanOnSkin</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+    </apparel>
+	<modExtensions>
+     <li Class="taranchuk_apparelgraphics.ApparelExtension">
+      <hideBody>False</hideBody>
+      <femaleBody>Male</femaleBody>
+      <maleBody>Male</maleBody>
+     </li>
+    </modExtensions>
+  </ThingDef>
+  
+  <ThingDef ParentName="HelghastArmorMachineableBase">
+    <defName>Apparel_HG_Grenadier</defName>
+    <label>Helghast Grenadier Flak Kit</label>
+    <description>Heavy, cumbersome, and a poor substitute for real EOD gear, the grenadiers at times loathe their unwieldy suits, woven with thick fibers to imbue the kit with blast and shrapnel resistant qualities. The Helghan regime stopped short of substantially improving the armors performance, leaving many grenadiers to feel exposed and awkward compared to their nimble counterparts. They maintain distance, using medium to long range grenade launchers to back up nearby forces. In a pinch, they can sometimes be called upon to use heavy squad support weaponry, but this is rare. Grenadiers were envisioned as part of heavy helghan mechanized infantry regiments, deploying from IFV's and personnel carriers amidst an enemy position, but since the loss of much of helghan's armored division, these troopers were forced to march with their lesser cousins. They enjoy better armor than most of their colleagues, but are a far cry from the upper echelon of the helghan army.</description>
+    <techLevel>Industrial</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+      <researchPrerequisite>FlakArmor</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+      </recipeUsers>
+	  <displayPriority>3</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Helghast/Grenadier/GrenadierOnSkin_Male_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToMake>24500</WorkToMake>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Mass>15</Mass>
+      <Flammability>0.1</Flammability>
+      <ArmorRating_Sharp>1</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.50</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.45</ArmorRating_Heat>
+      <Insulation_Cold>20</Insulation_Cold>
+      <Insulation_Heat>5</Insulation_Heat>
+      <EquipDelay>4</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+	  <PainShockThreshold>0.10</PainShockThreshold>
+	  <MoveSpeed>-0.20</MoveSpeed>
+	  <ToxicEnvironmentResistance>0.05</ToxicEnvironmentResistance>
+	  <RangedCooldownFactor>-0.1</RangedCooldownFactor>
+	  <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">30</VEF_MassCarryCapacity>
+    </equippedStatOffsets>
+    <thingCategories>
+      <li>ApparelArmor</li>
+    </thingCategories>
+    <costList>
+	  <Plasteel>15</Plasteel>
+	  <Steel>135</Steel>
+	  <ComponentIndustrial>3</ComponentIndustrial>
+	  <Cloth>100</Cloth>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+	  <tags>
+        <li>HelghastAssault</li>
+      </tags>
+      <wornGraphicPath>Things/Helghast/Grenadier/GrenadierOnSkin</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+		<li>Shell</li>
+      </layers>
+    </apparel>
+	<modExtensions>
+     <li Class="taranchuk_apparelgraphics.ApparelExtension">
+      <hideBody>False</hideBody>
+      <femaleBody>Male</femaleBody>
+      <maleBody>Male</maleBody>
+     </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>

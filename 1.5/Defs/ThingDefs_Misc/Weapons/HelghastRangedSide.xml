@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <ThingDef ParentName="HelghastBaseHumanMakeableGun">
+    <defName>Gun_HG_SFOX</defName>
+    <label>S-FOX</label>
+    <description>Created to satisfy demands from tankers in the 'Shock' armies for a smaller, better personal defense weapon, the S-FOX was an unexpected coup in terms of design success. Effectively an overdesigned Tropov, the S-FOX is a fully automatic machine-pistol with good accuracy and excellent rate of fire. In trials it impressed the Helghan directory, but scored poorly when it came to production feasability and field testing - too expensive, too heavy, to slow to produce. Police and paramilitaries from all over the rim clamor for just such a sidearm however.</description>
+    <techLevel>Industrial</techLevel>
+	<graphicData>
+      <texPath>Things/Helghast/Weapons/SFOX</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <drawSize>1.05</drawSize>
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <soundInteract>Interact_SMG</soundInteract>
+    <recipeMaker>
+      <researchPrerequisite>BlowbackOperation</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+	  <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+      </recipeUsers>
+      <displayPriority>300</displayPriority>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>20000</WorkToMake>
+      <Mass>2.9</Mass>
+      <AccuracyTouch>0.90</AccuracyTouch>
+      <AccuracyShort>0.65</AccuracyShort>
+      <AccuracyMedium>0.40</AccuracyMedium>
+      <AccuracyLong>0.20</AccuracyLong>
+      <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+	<weaponTags>
+	 <li>HelghastSidearmBasic</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_SFOX</defaultProjectile>
+        <warmupTime>0.4</warmupTime>
+        <range>20.9</range>
+        <burstShotCount>4</burstShotCount>
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <soundCast>Shot_MachinePistol</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.8</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_SFOX</defName>
+    <label>SFOX round</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>7</damageAmountBase>
+      <speed>55</speed>
+    </projectile>
+  </ThingDef>
+
+</Defs>
