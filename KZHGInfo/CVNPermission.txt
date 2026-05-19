@@ -1,0 +1,15 @@
+You may not without CVN, JTC, or BoneZone/Lysk permission, redistribute, repurpose, or repackage these files
+
+balance patches, translation patches, or ANY other form of work that requires the original mod to be enabled may be made without permission
+
+CVN - Coventech Modding Group, notable members include JerryTheCultist and ShunTheWitch
+JTC - JerryTheCultist
+BoneZone - original commissioner of the mod
+Lysk - co-commissioner of the mod
+
+FAQ version for steam
+Q: can we use or rerelease this mod/assets from this mod?
+A: absolutely not without CVN permission, you ask and wait. and yes this includes any form of reuse, even tracing or training. permission from CVN is required before using it for anything
+
+submods that require the original are completely fine however, these include translations, balance patchs, whatever
+asking is polite however, it feels nice to know people wanna add on to the mod

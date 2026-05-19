@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>HGempire_OverlordShuttle</defName>
+		<label>Overlord Dropship</label>
+		<description>Many argue the pride of the Helghast military industrial complex is in the swift, sleek, and durable Overlord Dropship. Capable of deploying whole squads via fast roping, loaded with a state-of-the-art petruscite based engine, and built to operate in the worst combat zones imaginable, the Overlord remains respected even after decades of service history. Its crew load is a spacious 8+2 pilots, with plenty of room for cargo or additional seating. They are capable of achieving limited escape velocity and orbital movement, such quality has a price however; these drop ships are bigger and more expensive than many equivalents.</description>
+		<thingClass>Building_PassengerShuttle</thingClass>
+		<preventDroppingThingsOn>true</preventDroppingThingsOn>
+		<altitudeLayer>Building</altitudeLayer>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.75</fillPercent>
+		<size>(5,7)</size>
+		<drawHighlight>true</drawHighlight>
+		<highlightColor>(0.56, 0.62, 0.9)</highlightColor>
+		<uiIconScale>1</uiIconScale>
+		<graphicData>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<texPath>Things/Building/Overlord_Dropship/Overlord</texPath>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(5.5,9)</drawSize>
+			<shadowData>
+				<volume>(2, 1.0, 4.2)</volume>
+				<offset>(-0.1, 0, 0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Overlord_Dropship/Overlord_east</uiIconPath>
+		<statBases>
+			<MaxHitPoints>3500</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<WorkToBuild>65250</WorkToBuild>
+			<Mass>750</Mass>
+			<Comfort>0.20</Comfort>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<designationCategory>Odyssey</designationCategory>
+		<constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+		<costList>
+			<Steel>1250</Steel>
+			<Plasteel>300</Plasteel>
+			<Uranium>50</Uranium>
+			<ComponentIndustrial>18</ComponentIndustrial>
+			<ShuttleEngine>2</ShuttleEngine>
+		</costList>
+		<canOverlapZones>true</canOverlapZones>
+		<killedLeavings>
+			<Steel>125</Steel>
+			<Plasteel>50</Plasteel>
+			<ChunkSlagSteel>6</ChunkSlagSteel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+			<Uranium>5</Uranium>
+		</killedLeavings>
+		<rotatable>true</rotatable>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(2, 0, 0)</interactionCellOffset>
+		<defaultPlacingRot>East</defaultPlacingRot>
+		<selectable>true</selectable>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+		<drawerType>RealtimeOnly</drawerType>
+		<repairEffect>ConstructMetal</repairEffect>
+		<forceDebugSpawnable>true</forceDebugSpawnable>
+		<building>
+			<claimable>false</claimable>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+			<paintable>true</paintable>
+			<isInert>true</isInert>
+			<forcedCostLeavings>
+				<li MayRequire="Ludeon.RimWorld.Odyssey">ShuttleEngine</li>
+			</forcedCostLeavings>
+		</building>
+		<inspectorTabs>
+			<li>ITab_ContentsTransporter</li>
+		</inspectorTabs>
+		<researchPrerequisites>
+			<li>Shuttles</li>
+		</researchPrerequisites>
+		<comps>
+			<li Class="CompProperties_Shuttle">
+				<shipDef>Ship_OverlordShuttle</shipDef>
+			</li>
+			<li Class="CompProperties_Launchable">
+				<fuelPerTile>10</fuelPerTile>
+				<minFuelCost>50</minFuelCost>
+				<skyfallerLeaving>OverlordShuttleLeaving</skyfallerLeaving>
+				<worldObjectDef>Ship_OverlordShuttle</worldObjectDef>
+				<cooldownTicks>3750</cooldownTicks>
+				<fixedLaunchDistanceMax>100</fixedLaunchDistanceMax>
+				<cooldownEndedMessage>{0} is ready to launch again.</cooldownEndedMessage>
+			</li>
+			<li Class="CompProperties_Transporter">
+				<massCapacity>1500</massCapacity>
+				<max1PerGroup>true</max1PerGroup>
+				<canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting>
+				<pawnLoadedSound>Shuttle_PawnLoaded</pawnLoadedSound>
+				<pawnExitSound>Shuttle_PawnExit</pawnExitSound>
+				<showMassInInspectString>true</showMassInInspectString>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>2000</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>500</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<fuelLabel>Chemfuel</fuelLabel>
+				<fuelGizmoLabel>Chemfuel</fuelGizmoLabel>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+				<canEjectFuel>true</canEjectFuel>
+			</li>
+			<li Class="CompProperties_AmbientSound">
+				<sound>ShuttleIdle_Ambience</sound>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>	
+	</ThingDef>
+
+	<TransportShipDef>
+		<defName>Ship_OverlordShuttle</defName>
+		<label>Overlord Dropship</label>
+		<shipThing>HGempire_OverlordShuttle</shipThing>
+		<arrivingSkyfaller>OverlordShuttleIncoming</arrivingSkyfaller>
+		<leavingSkyfaller>OverlordShuttleLeaving</leavingSkyfaller>
+		<worldObject>Ship_OverlordShuttle</worldObject>
+		<playerShuttle>true</playerShuttle>
+	</TransportShipDef>
+	
+</Defs>
