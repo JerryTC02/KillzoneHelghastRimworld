@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <ScenarioDef ParentName="ScenarioBase">
+        <defName>JTC_Helghastbasic</defName>
+        <label>Lost Helghast</label>
+        <description>For you, the death of Helghan happened moments ago.The Petrusite Bomb, intended to thwart the imperialist Terrans and the ISA dogs once and for all, instead brought ruin to your benighted world. Boarded upon massive evacuation ships, you were sequestered away into stasis trays, each one holding hundreds of your kindred. An unknown amount of time has passed in suspended animation from that dark day. You awoke, beset with cryo-sickness, in a smoldering starship, hurtling towards a world you do not recognize. Thankfully years of survival drills kick in, and you spring into action with a few other survivors and enter nearby escape pods. It's a rough ride down to the surface, but beyond the glass you see what looks to be a virgin world fresh for conquest or settlement- your doom or your salvation. now that you're about to touch down, your mind wanders to what happened to the rest of your people. Are you the last of the Helghast race? Regardless, you expect nothing but struggle, your people always have always struggled.</description>
+        <scenario>
+            <summary>Four helghan survivors, fighting to rebuild a home for their people.</summary>
+            <playerFaction>
+                <def>PlayerFaction</def>
+                <factionDef>PlayerColonyHelghast</factionDef>
+            </playerFaction>
+            <parts>
+            <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_Xenotypes">
+             <def>ConfigurePawnsXenotypes</def>
+             <pawnChoiceCount>0</pawnChoiceCount>
+             <overrideKinds>
+              <li>
+               <xenotype>Helghast</xenotype>
+               <pawnKind>HG_Colonist</pawnKind>
+              </li>
+             </overrideKinds>
+			    <xenotypeCounts>
+                        <li>
+                            <xenotype>Helghast</xenotype>
+                            <count>4</count>
+                        </li>
+                </xenotypeCounts>
+             </li>
+                <li Class="ScenPart_PlayerPawnsArriveMethod">
+                    <def>PlayerPawnsArriveMethod</def>
+                    <method>DropPods</method>
+                    <visible>false</visible>
+                </li>
+                <!-- Items -->
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>MedicineIndustrial</thingDef>
+                    <count>15</count>
+                </li>
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>ComponentIndustrial</thingDef>
+                    <count>25</count>
+                </li>
+				<li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>MealSurvivalPack</thingDef>
+                    <count>30</count>
+                </li>
+				<!-- Apparel -->
+				<li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>Apparel_HG_Tactrebreather</thingDef>
+                    <count>2</count>
+                </li>
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>Apparel_HG_Riflehelm</thingDef>
+                    <count>1</count>
+                </li>
+				<!-- Weapon -->
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>Gun_HG_StA11g</thingDef>
+                    <count>1</count>
+                </li>
+				<li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>Gun_HG_StA14g</thingDef>
+                    <count>1</count>
+                </li>
+			    <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>Gun_HG_StA52gII</thingDef>
+                    <count>1</count>
+                </li>
+				<li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>MeleeWeapon_Knife</thingDef>
+					<stuff>Steel</stuff>
+                    <count>1</count>
+                </li>
+				<!-- Scattered -->
+                <li Class="ScenPart_ScatterThingsNearPlayerStart">
+                    <def>ScatterThingsNearPlayerStart</def>
+                    <thingDef>WoodLog</thingDef>
+                    <count>100</count>
+                </li>
+                <li Class="ScenPart_ScatterThingsNearPlayerStart">
+                    <def>ScatterThingsNearPlayerStart</def>
+                    <thingDef>Steel</thingDef>
+                    <count>125</count>
+                </li>
+                <li Class="ScenPart_ScatterThingsAnywhere">
+                    <def>ScatterThingsAnywhere</def>
+                    <thingDef>ShipChunk</thingDef>
+                    <allowRoofed>false</allowRoofed>
+                    <count>8</count>
+                </li>
+				<li Class="ScenPart_ScatterThingsAnywhere">
+                    <def>ScatterThingsAnywhere</def>
+                    <thingDef>Steel</thingDef>
+                    <allowRoofed>false</allowRoofed>
+                    <count>275</count>
+                </li>
+                <li Class="ScenPart_GameStartDialog">
+                    <def>GameStartDialog</def>
+                    <text>"The pods land safely, this planet is no Helghan but it will have to suffice. Any nearby Helghan successor states are unlikely to trust you at first, if at all. The lenient ones have already labeled you KIA, the extreme ones? deserter. nearby parts of the colony ship should provide you enough materials to make a foothold here, time to do what Helghast do best. Survive" </text>
+                    <closeSound>GameStartSting</closeSound>
+                </li>
+            </parts>
+        </scenario>
+    </ScenarioDef>
+	
+	<FactionDef ParentName="PlayerFactionBase">
+    <defName>PlayerColonyHelghast</defName>
+    <label>Helghan Colony</label>
+    <description>An outpost of recently-arrived and indecisive Helghast</description>
+    <isPlayer>true</isPlayer>
+    <basicMemberKind>HG_Colonist</basicMemberKind>
+    <pawnSingular>colonist</pawnSingular>
+    <pawnsPlural>colonists</pawnsPlural>
+	<xenotypeSet Inherit="False">
+      <xenotypeChances>
+        <Helghast>1</Helghast>
+      </xenotypeChances>
+    </xenotypeSet>
+    <techLevel>Industrial</techLevel>
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <allowedCultures><li>HelghanCul</li></allowedCultures>
+    <backstoryFilters>
+      <li>
+        <categories>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <startingResearchTags>
+      <li>ClassicStart</li>
+    </startingResearchTags>
+    <startingTechprintsResearchTags>
+      <li>ClassicStart</li>
+      <li>ClassicStartTechprints</li>
+    </startingTechprintsResearchTags>
+    <apparelStuffFilter>
+      <thingDefs>
+        <li>Synthread</li>
+      </thingDefs>
+    </apparelStuffFilter>
+  </FactionDef>
+	
+  <PawnKindDef>
+    <defName>HG_Colonist</defName>
+    <label>Colonist</label>
+	<defaultFactionType>PlayerColonyHelghast</defaultFactionType>
+    <race>Human</race>
+    <combatPower>30</combatPower>
+	<nameMaker>NamerHelghastPersonM</nameMaker>
+    <nameMakerFemale>NamerHelghastPersonF</nameMakerFemale>
+	<backstoryFiltersOverride>
+      <li>
+        <categories>
+		    <li>Outlander</li>
+        </categories>
+      </li>
+    </backstoryFiltersOverride>
+    <minGenerationAge>19</minGenerationAge>
+    <maxGenerationAge>35</maxGenerationAge>
+    <initialWillRange>5~8</initialWillRange>
+    <initialResistanceRange>15~25</initialResistanceRange>
+	<isFighter>false</isFighter>
+	<apparelMoney>1000~1200</apparelMoney>
+    <apparelTags>
+		<li>HelghastRiflemenBasic</li>
+    </apparelTags>
+	<xenotypeSet>
+      <xenotypeChances>
+        <Helghast>999</Helghast>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+  
+</Defs>

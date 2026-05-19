@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+	<name>Rimzone: Sons and Daughters of Helghan</name>
+	<author>JerryTheCultist</author>
+	<supportedVersions>
+		<li>1.5</li>
+		<li>1.6</li>
+	</supportedVersions>
+	<modDependencies>
+	    <li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+	   </li>
+	   <li>
+			<packageId>ShunTheWitch.CVNmechanoidwarfarecore</packageId>
+			<displayName>CVN Mechanoid Warfare Core</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3047564391</steamWorkshopUrl>
+	   </li>
+	</modDependencies>
+	<packageId>JTC.Helghast</packageId>
+	<loadAfter>
+	    <li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+		<li>ShunTheWitch.CVNmechanoidwarfarecore</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+	</loadAfter>
+	<description>Adds the Helghast to rimworld</description>
+</ModMetaData>

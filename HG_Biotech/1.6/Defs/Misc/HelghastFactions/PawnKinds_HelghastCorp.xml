@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <PawnKindDef ParentName="HelghastCorpFighterBase">
+    <defName>HGcorp_Fighter_FactionLeader</defName>
+    <label>Chairman</label>
+    <nameMaker>NamerHelghastPersonM</nameMaker>
+	<nameMakerFemale>NamerHelghastPersonF</nameMakerFemale>
+	<combatPower>70</combatPower>
+	<factionLeader>true</factionLeader>
+	<isFighter>false</isFighter>
+	<apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
+	<weaponTags>
+	  <li>HelghastSidearmBasic</li>
+	  <li>HelghastSidearm</li>
+    </weaponTags>
+    <apparelTags>
+		<li>HelghanSenate</li>
+		<li>HelghastOfficerHigh</li>
+    </apparelTags>
+	<invNutrition>2.25</invNutrition>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>7~10</range>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <range>5~8</range>
+      </li>
+	  <li>
+        <skill>Artistic</skill>
+        <range>0~2</range>
+      </li>
+	  <li>
+        <skill>Medicine</skill>
+        <range>3~5</range>
+      </li>
+	  <li>
+        <skill>Social</skill>
+        <range>6~8</range>
+      </li>
+	  <li>
+        <skill>Intellectual</skill>
+        <range>4~7</range>
+      </li>
+    </skills>
+    <initialResistanceRange>50~65</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Helghast>1</Helghast>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+ <PawnKindDef Name="HelghastCorpFighterBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>HelghastJuntaFaction</defaultFactionType>
+	<minGenerationAge>19</minGenerationAge>
+    <maxGenerationAge>35</maxGenerationAge>
+	<nameMaker>NamerHelghastPersonM</nameMaker>
+    <nameMakerFemale>NamerHelghastPersonF</nameMakerFemale>
+    <backstoryFiltersOverride>
+      <li>
+        <categories>
+		    <li>Outlander</li>
+        </categories>
+      </li>
+    </backstoryFiltersOverride>
+	<invNutrition>0.75</invNutrition>
+    <chemicalAddictionChance>0.1</chemicalAddictionChance>
+    <combatEnhancingDrugsChance>0.05</combatEnhancingDrugsChance>
+    <combatEnhancingDrugsCount>0~1</combatEnhancingDrugsCount>
+    <itemQuality>Normal</itemQuality>
+    <weaponMoney>925~1250</weaponMoney>
+    <apparelMoney>1250~2500</apparelMoney>
+    <techHediffsChance>0</techHediffsChance>
+    <techHediffsMoney>1000~1500</techHediffsMoney>
+    <biocodeWeaponChance>0</biocodeWeaponChance>
+	<inventoryOptions>
+      <skipChance>0.80</skipChance>
+      <subOptionsChooseOne>
+        <li>
+          <thingDef>MedicineIndustrial</thingDef>
+          <countRange>1</countRange>
+        </li>
+      </subOptionsChooseOne>
+    </inventoryOptions>
+    <disallowedTraits>
+      <li>Nudist</li>
+    </disallowedTraits>
+	<initialWillRange>6~11</initialWillRange>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="HelghastCorpFighterBase">
+    <defName>HGCorp_Fighter_Patrol_Hig</defName>
+    <label>Patrolmen</label>
+	<nameMaker>NamerHelghastPersonM</nameMaker>
+	<nameMakerFemale>NamerHelghastPersonF</nameMakerFemale>
+	<combatPower>55</combatPower>
+	<weaponTags>
+      <li>HelghastMain</li>
+    </weaponTags>
+    <apparelTags>
+      <li>HelghastRiflemenBasicCold</li>
+	  <li>HelghastRiflemenCold</li>
+    </apparelTags>
+	<apparelRequired>
+      <li>Apparel_HG_Cold_Riflemen</li>
+	  <li>Apparel_HG_Cold_Rifleweb</li>
+	  <li>Apparel_HG_Cold_Riflehelm</li>
+    </apparelRequired>
+    <weaponMoney>450~750</weaponMoney>
+	<invNutrition>1</invNutrition>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>4~6</range>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <range>3~5</range>
+      </li>
+    </skills>
+    <initialResistanceRange>25~30</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Helghast>1</Helghast>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+ 
+  <PawnKindDef ParentName="HelghastCorpFighterBase">
+    <defName>HGCorp_Fighter_Cold_Assault</defName>
+    <label>Arctic Assault</label>
+	<nameMaker>NamerHelghastPersonM</nameMaker>
+	<nameMakerFemale>NamerHelghastPersonF</nameMakerFemale>
+	<combatPower>60</combatPower>
+	<weaponTags>
+      <li>HelghastShotgun</li>
+	  <li>HelghastSMG</li>
+    </weaponTags>
+    <apparelTags>
+      <li>HelghastAssaultCold</li>
+    </apparelTags>
+	<apparelRequired>
+      <li>Apparel_HG_Cold_Assault</li>
+	  <li>Apparel_HG_Cold_Assaultweb</li>
+	  <li>Apparel_HG_Cold_Tacthelm</li>
+    </apparelRequired>
+    <apparelMoney>1050~1250</apparelMoney>
+    <weaponMoney>315~700</weaponMoney>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>3~5</range>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <range>4~6</range>
+      </li>
+    </skills>
+    <initialResistanceRange>25~30</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Helghast>1</Helghast>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="HelghastCorpFighterBase">
+    <defName>HGCorp_Fighter_Tankhunter</defName>
+    <label>Tank Hunter</label>
+	<nameMaker>NamerHelghastPersonM</nameMaker>
+	<nameMakerFemale>NamerHelghastPersonF</nameMakerFemale>
+	<combatPower>65</combatPower>
+	<weaponTags>
+      <li>HelghastHeavy</li>
+      <li>RangedHeavy</li>
+    </weaponTags>
+    <apparelTags>
+      <li>HelghastGrenCold</li>
+    </apparelTags>
+	<apparelRequired>
+      <li>Apparel_HG_Cold_Grenadier</li>
+	  <li>Apparel_HG_Cold_Grenhelm</li>
+	  <li>Apparel_HG_Cold_Grenweb</li>
+    </apparelRequired>
+	<apparelMoney>1500~1950</apparelMoney>
+    <weaponMoney>695~825</weaponMoney>
+	<invNutrition>1</invNutrition>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>4~6</range>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <range>3~5</range>
+      </li>
+    </skills>
+    <initialResistanceRange>25~30</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Helghast>1</Helghast>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="HelghastCorpFighterBase">
+    <defName>HGCorp_Fighter_Hazmat</defName>
+    <label>Hazmat Trooper</label>
+	<nameMaker>NamerHelghastPersonM</nameMaker>
+	<nameMakerFemale>NamerHelghastPersonF</nameMakerFemale>
+	<combatPower>75</combatPower>
+	<weaponTags>
+      <li>HGArcRifle</li>
+    </weaponTags>
+    <apparelTags>
+      <li>Apparel_HG_Hazard</li>
+    </apparelTags>
+	<apparelRequired>
+      <li>Apparel_HG_Hazard</li>
+	  <li>Apparel_HG_HazardHelm</li>
+    </apparelRequired>
+    <weaponMoney>1900~2000</weaponMoney>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>4~6</range>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <range>3~5</range>
+      </li>
+    </skills>
+    <initialResistanceRange>35~40</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Helghast>1</Helghast>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="HelghastCorpFighterBase">
+    <defName>HGCorp_Fighter_Space_Assault</defName>
+    <label>Space Assault</label>
+	<nameMaker>NamerHelghastPersonM</nameMaker>
+	<nameMakerFemale>NamerHelghastPersonF</nameMakerFemale>
+	<combatPower>85</combatPower>
+	<weaponTags>
+      <li>HelghastMainEliteSpace</li>
+    </weaponTags>
+    <apparelTags>
+      <li>HelghastSpaceAssault</li>
+    </apparelTags>
+	<apparelRequired>
+      <li>Apparel_HG_NG_Assault</li>
+	  <li>Apparel_HG_NG_AssaultHelm</li>
+    </apparelRequired>
+    <weaponMoney>1900~2000</weaponMoney>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>4~6</range>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <range>3~5</range>
+      </li>
+    </skills>
+    <initialResistanceRange>35~40</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Helghast>1</Helghast>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+  
+    <!--===================== Helghast Corporate Factions =========================-->
+
+
+
+</Defs>

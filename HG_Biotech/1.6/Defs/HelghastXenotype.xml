@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <GeneCategoryDef>
+    <defName>Helghast</defName>
+    <label>Helghast</label>
+    <displayPriorityInXenotype>100010</displayPriorityInXenotype>
+  </GeneCategoryDef>
+  
+  <GeneDef Name="HelghastGenes" Abstract="True">
+    <displayCategory>Helghast</displayCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="HelghastGenes">
+    <defName>HG_Preference</defName>
+    <label>Helghan Native</label>
+    <labelShortAdj>Helghan Native</labelShortAdj>
+    <description>Among those descended from the original Helghast stock on Helghan, a recognizable social and instinctual pattern of group bias is observable. Even among infants, Helghast children band together. Geneticists debate if this is a physical change in the Helghan brain or learned behaviour from a culture so diffused with suffering. The least helpful are the Helghast themselves, who will explain it away as anything from superior genetic selection to an imbued, natural hatred to all enemies of the Helghan state. Whatever the case, it has made Helghast populations especially vulnerable to radical political movements and xenophobia. Unfortunately for their foes, this genetic cameraderie has a direct impact on the zeal and coherence of the Helghast armed forces.</description>
+    <iconPath>UI/Icons/H_helghastgene</iconPath>
+    <displayOrderInCategory>4</displayOrderInCategory>
+    <biostatMet>1</biostatMet>
+	<biostatCpx>2</biostatCpx>
+  </GeneDef>
+ 
+  <ThoughtDef>
+    <defName>HG_Native</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>CVNGeneUtils.ThoughtWorker_Gene</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>Helghan Native</label>
+		<description>WIP.</description>
+        <baseOpinionOffset>20</baseOpinionOffset>
+      </li>
+    </stages>
+    <modExtensions>
+     <li Class="CVNGeneUtils.ThoughtExtension_GeneOpinion">
+      <geneDefs>
+      <li>HG_Preference</li>
+      </geneDefs>
+      <state>0</state>
+     </li>
+    </modExtensions>
+  </ThoughtDef>
+  
+  <GeneDef ParentName="GeneSkinColorOverride">
+    <defName>Skin_HGpale</defName>
+    <label>pale skin</label>
+    <labelShortAdj>pale</labelShortAdj>
+    <description>Carriers of this gene have pale skin</description>
+    <randomBrightnessFactor>0</randomBrightnessFactor>
+    <skinColorOverride>(242, 237, 224)</skinColorOverride>
+    <displayOrderInCategory>99</displayOrderInCategory>
+  </GeneDef>
+  
+  <GeneDef ParentName="GeneSkinColorOverride">
+    <defName>Skin_HGpalee</defName>
+    <label>pale skin</label>
+    <labelShortAdj>pale</labelShortAdj>
+    <description>Carriers of this gene have pale skin</description>
+    <randomBrightnessFactor>0</randomBrightnessFactor>
+    <skinColorOverride>(255, 239, 213)</skinColorOverride>
+    <displayOrderInCategory>99</displayOrderInCategory>
+  </GeneDef>
+  
+  <GeneDef ParentName="GeneHairStyleBase">
+    <defName>Hair_Helghast</defName>
+    <label>bad hair</label>
+    <labelShortAdj>bad hair</labelShortAdj>
+    <description>Carriers of this gene commonly grow no hair on the head. any hair is often short</description>
+    <iconPath>UI/Icons/Genes/Gene_HairStyleBaldOnly</iconPath>
+    <displayOrderInCategory>50</displayOrderInCategory>
+    <hairTagFilter>
+      <whitelist>true</whitelist>
+      <tags>
+        <li>Bald</li>
+		<li>HairShort</li>
+      </tags>
+    </hairTagFilter>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>bald</symbol></li>
+        <li><symbol>chrome</symbol></li>
+        <li><symbol>dome</symbol></li>
+        <li><symbol>smooth</symbol></li>
+        <li><symbol>bare</symbol></li>
+		<li><symbol>crop</symbol></li>
+        <li><symbol>fuzz</symbol></li>
+        <li><symbol>stub</symbol></li>
+        <li><symbol>patch</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>dome</symbol></li>
+        <li><symbol>smooth</symbol></li>
+        <li><symbol>bare</symbol></li>
+		<li><symbol>crop</symbol></li>
+        <li><symbol>fuzz</symbol></li>
+        <li><symbol>stub</symbol></li>
+        <li><symbol>patch</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <XenotypeDef>
+    <defName>Helghast</defName>
+    <label>Helghast</label>
+    <description>The Helghast are near-baseliner xenohumans hailing from the irradiated, industrial world of Helghan. As the planet was largely unfit for human life, the now-defunct Helghan Corporation pursued an aggressive process of gene therapy and guided evolution to adapt their bodies to life on the planet. It took generations, and countless lives lost to cancerous tumors and childbirth, in order for latter generation Helghast to finally be able to live on their new world. Their bodies had become pale from living in enclosures, bunkers, and factories shielded from radiation, and their lungs had developed substantially differently, capable of inhaling partial toxic environments thanks to inner gill-like natural filters. Hair loss had become genetic, from both cancer treatments and prolonged radiation poisoning, largely affecting the lower class families of the Helghan populace. Finally, on a semi instinctual level, the Helghast came to develop a deep seated own-group bias from the collective trauma their bloodlines had lived through. This lead to greater social cohesion but, even before the rise of Visari, a general xenophobic attitude to outsiders. Modern propaganda from the Helghan state boasts other qualities- increased natural strength, purity, greater intelligence, even greater beauty in their women- but this can be attributed to the aforementioned own-group bias and the propaganda of the Helghan state.</description>
+    <descriptionShort>Near-baseliner xenohumans hailing from the irradiated, industrial world of Helghan.</descriptionShort>
+    <iconPath>UI/Icons/Xenotypes/Helghast</iconPath>
+    <inheritable>true</inheritable>
+    <chanceToUseNameMaker>1</chanceToUseNameMaker>
+    <genes>
+	  <li>HG_Preference</li>
+	  <li>Hair_Helghast</li>
+	  <li>Body_Standard</li>
+	  <li>Pain_Reduced</li>
+	  <li>ToxicEnvironmentResistance_Partial</li>
+	  <li>AptitudePoor_Animals</li>
+	  <li>Skin_LightGray</li>
+	  <li>Skin_HGpale</li>
+	  <li>Skin_HGpalee</li>
+    </genes>
+  </XenotypeDef>
+
+</Defs>

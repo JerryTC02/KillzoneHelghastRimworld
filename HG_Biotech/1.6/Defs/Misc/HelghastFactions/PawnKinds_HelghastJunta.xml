@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <PawnKindDef ParentName="HelghastFighterBase">
+    <defName>HGempire_Fighter_FactionLeader</defName>
+    <label>High Admiral</label>
+    <nameMaker>NamerHelghastPersonM</nameMaker>
+	<nameMakerFemale>NamerHelghastPersonF</nameMakerFemale>
+	<combatPower>70</combatPower>
+	<factionLeader>true</factionLeader>
+	<isFighter>false</isFighter>
+	<apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
+	<weaponTags>
+	  <li>HelghastSidearmBasic</li>
+	  <li>HelghastSidearm</li>
+    </weaponTags>
+    <apparelTags>
+		<li>HelghanSenate</li>
+		<li>HelghastOfficerHigh</li>
+    </apparelTags>
+	<invNutrition>2.25</invNutrition>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>7~10</range>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <range>5~8</range>
+      </li>
+	  <li>
+        <skill>Artistic</skill>
+        <range>0~2</range>
+      </li>
+	  <li>
+        <skill>Medicine</skill>
+        <range>3~5</range>
+      </li>
+	  <li>
+        <skill>Social</skill>
+        <range>6~8</range>
+      </li>
+	  <li>
+        <skill>Intellectual</skill>
+        <range>4~7</range>
+      </li>
+    </skills>
+    <initialResistanceRange>50~65</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Helghast>1</Helghast>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+ <PawnKindDef Name="HelghastFighterBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>HelghastJuntaFaction</defaultFactionType>
+	<minGenerationAge>19</minGenerationAge>
+    <maxGenerationAge>35</maxGenerationAge>
+	<nameMaker>NamerHelghastPersonM</nameMaker>
+    <nameMakerFemale>NamerHelghastPersonF</nameMakerFemale>
+    <backstoryFiltersOverride>
+      <li>
+        <categories>
+		    <li>Outlander</li>
+        </categories>
+      </li>
+    </backstoryFiltersOverride>
+	<invNutrition>0.75</invNutrition>
+    <chemicalAddictionChance>0.1</chemicalAddictionChance>
+    <combatEnhancingDrugsChance>0.05</combatEnhancingDrugsChance>
+    <combatEnhancingDrugsCount>0~1</combatEnhancingDrugsCount>
+    <itemQuality>Normal</itemQuality>
+    <weaponMoney>925~1250</weaponMoney>
+    <apparelMoney>1250~2500</apparelMoney>
+    <techHediffsChance>0</techHediffsChance>
+    <techHediffsMoney>1000~1500</techHediffsMoney>
+    <biocodeWeaponChance>0</biocodeWeaponChance>
+	<inventoryOptions>
+      <skipChance>0.90</skipChance>
+      <subOptionsChooseOne>
+        <li>
+          <thingDef>MedicineIndustrial</thingDef>
+          <countRange>1</countRange>
+        </li>
+      </subOptionsChooseOne>
+    </inventoryOptions>
+    <disallowedTraits>
+      <li>Nudist</li>
+    </disallowedTraits>
+	<initialWillRange>6~11</initialWillRange>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="HelghastFighterBase">
+    <defName>HGempire_Fighter_Slave</defName>
+    <label>Penal Conscript</label>
+    <combatPower>30</combatPower>
+	<gearHealthRange>0.7~0.9</gearHealthRange>
+	<specificApparelRequirements>
+      <li>
+        <bodyPartGroup>UpperHead</bodyPartGroup>
+        <stuff>Leather_Patch</stuff>
+      </li>
+	  <li>
+        <bodyPartGroup>Neck</bodyPartGroup>
+        <stuff>Leather_Plain</stuff>
+      </li>
+      <li>
+        <bodyPartGroup>Torso</bodyPartGroup>
+        <stuff>Leather_Patch</stuff>
+      </li>
+      <li>
+        <bodyPartGroup>Legs</bodyPartGroup>
+        <stuff>Leather_Patch</stuff>
+      </li>
+    </specificApparelRequirements>
+    <apparelMoney>300~600</apparelMoney>
+	<weaponTags>
+      <li>SimpleGun</li>
+	  <li>MedievalMeleeBasic</li>
+	  <li>MedievalMeleeDecent</li>
+    </weaponTags>
+	<weaponMoney>100~550</weaponMoney>
+	<apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+	<apparelTags>
+      <li>IndustrialBasic</li>
+	  <li>IndustrialAdvanced</li>
+    </apparelTags>
+	<apparelRequired>
+      <li>Apparel_Collar</li>
+    </apparelRequired>
+    <initialResistanceRange>5~10</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Neanderthal>1.2</Neanderthal>
+        <Genie>1.2</Genie>
+		<Baseliner>1.25</Baseliner>
+		<Dirtmole>1.2</Dirtmole>
+		<Pigskin>1.25</Pigskin>
+		<Impid>1.2</Impid>
+		<Waster>1.2</Waster>
+		<Yttakin>1.2</Yttakin>
+      </xenotypeChances>
+    </xenotypeSet>
+	<useFactionXenotypes>false</useFactionXenotypes>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="HelghastFighterBase">
+    <defName>HGempire_Fighter_Conscript</defName>
+    <label>Local Conscript</label>
+    <combatPower>40</combatPower>
+	<weaponTags>
+      <li>Gun</li>
+	  <li>HelghastSMG</li>
+      <li>HelghastMain</li>
+	  <li>HelghastSidearmBasic</li>
+    </weaponTags>
+	<apparelMoney>850~1250</apparelMoney>
+	<weaponMoney>185~375</weaponMoney>
+	<apparelTags>
+      <li>HelghastRiflemenBasic</li>
+	  <li>HelghastAssault</li>
+    </apparelTags>
+    <initialResistanceRange>20~25</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Neanderthal>1</Neanderthal>
+		<Baseliner>1</Baseliner>
+		<Dirtmole>1</Dirtmole>
+		<Waster>1</Waster>
+      </xenotypeChances>
+    </xenotypeSet>
+	<useFactionXenotypes>false</useFactionXenotypes>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="HelghastFighterBase">
+    <defName>HGempire_Fighter_VetConscript</defName>
+    <label>Helghast Auxillaries</label>
+    <combatPower>55</combatPower>
+	<weaponTags>
+      <li>Gun</li>
+	  <li>HelghastSMG</li>
+      <li>HelghastMain</li>
+    </weaponTags>
+	<weaponMoney>285~650</weaponMoney>
+	<apparelTags>
+      <li>HelghastRiflemenBasic</li>
+	  <li>HelghastRiflemen</li>
+	  <li>HelghastAssault</li>
+	  <li>HelghastHeavy</li>
+    </apparelTags>
+	<skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>3~6</range>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <range>3~5</range>
+      </li>
+    </skills>
+    <initialResistanceRange>25~30</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Neanderthal>1.25</Neanderthal>
+		<Hussar>1.25</Hussar>
+		<Waster>1.5</Waster>
+      </xenotypeChances>
+    </xenotypeSet>
+	<useFactionXenotypes>false</useFactionXenotypes>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="HelghastFighterBase">
+    <defName>HGempire_Fighter_Hig</defName>
+    <label>Riflemen</label>
+	<nameMaker>NamerHelghastPersonM</nameMaker>
+	<nameMakerFemale>NamerHelghastPersonF</nameMakerFemale>
+	<combatPower>55</combatPower>
+	<weaponTags>
+      <li>HelghastMain</li>
+    </weaponTags>
+    <apparelTags>
+      <li>HelghastRiflemenBasic</li>
+	  <li>HelghastRiflemen</li>
+    </apparelTags>
+    <apparelRequired>
+      <li>Apparel_HG_Riflemen</li>
+	  <li>Apparel_HG_Rifleweb</li>
+	  <li>Apparel_HG_Riflehelm</li>
+    </apparelRequired>
+    <weaponMoney>350~750</weaponMoney>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>4~6</range>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <range>3~5</range>
+      </li>
+    </skills>
+    <initialResistanceRange>25~30</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Helghast>1</Helghast>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="HelghastFighterBase">
+    <defName>HGempire_Fighter_Shocktrooper</defName>
+    <label>Shocktrooper</label>
+	<nameMaker>NamerHelghastPersonM</nameMaker>
+	<nameMakerFemale>NamerHelghastPersonF</nameMakerFemale>
+	<combatPower>55</combatPower>
+	<weaponTags>
+      <li>HelghastSMG</li>
+	  <li>HelghastSidearm</li>
+    </weaponTags>
+    <apparelTags>
+      <li>HelghastShock</li>
+	  <li>HelghastShockRebreather</li>
+    </apparelTags>
+    <weaponMoney>325~550</weaponMoney>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>4~6</range>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <range>5~6</range>
+      </li>
+    </skills>
+    <initialResistanceRange>25~30</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Helghast>1</Helghast>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="HelghastFighterBase">
+    <defName>HGempire_Fighter_ShockSexy</defName>
+    <label>Advanced Shocktrooper</label>
+	<nameMaker>NamerHelghastPersonM</nameMaker>
+	<nameMakerFemale>NamerHelghastPersonF</nameMakerFemale>
+	<combatPower>60</combatPower>
+	<weaponTags>
+      <li>HelghastSMG</li>
+    </weaponTags>
+    <apparelTags>
+      <li>Helghanshocksexy</li>
+	  <li>HelghastOfficer</li>
+	  <li>HelghastShockRebreather</li>
+	  <li></li>
+    </apparelTags>
+    <weaponMoney>325~650</weaponMoney>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>5~7</range>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <range>6~7</range>
+      </li>
+    </skills>
+    <initialResistanceRange>25~30</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Helghast>1</Helghast>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="HelghastFighterBase">
+    <defName>HGempire_Fighter_Assault</defName>
+    <label>Assault</label>
+	<nameMaker>NamerHelghastPersonM</nameMaker>
+	<nameMakerFemale>NamerHelghastPersonF</nameMakerFemale>
+	<combatPower>60</combatPower>
+	<weaponTags>
+      <li>HelghastShotgun</li>
+	  <li>HelghastSMG</li>
+    </weaponTags>
+    <apparelTags>
+      <li>HelghastAssault</li>
+    </apparelTags>
+	<apparelRequired>
+      <li>Apparel_HG_Assault</li>
+	  <li>Apparel_HG_Assaultweb</li>
+    </apparelRequired>
+    <apparelMoney>950~1250</apparelMoney>
+    <weaponMoney>315~700</weaponMoney>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>3~5</range>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <range>4~6</range>
+      </li>
+    </skills>
+    <initialResistanceRange>25~30</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Helghast>1</Helghast>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="HelghastFighterBase">
+    <defName>HGempire_Fighter_Fatty</defName>
+    <label>Grenadier</label>
+	<nameMaker>NamerHelghastPersonM</nameMaker>
+	<nameMakerFemale>NamerHelghastPersonF</nameMakerFemale>
+	<combatPower>65</combatPower>
+	<weaponTags>
+      <li>HelghastHeavy</li>
+      <li>RangedHeavy</li>
+    </weaponTags>
+    <apparelTags>
+      <li>HelghastGren</li>
+    </apparelTags>
+    <weaponMoney>395~825</weaponMoney>
+	<invNutrition>1</invNutrition>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>4~6</range>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <range>3~5</range>
+      </li>
+    </skills>
+    <initialResistanceRange>25~30</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Helghast>1</Helghast>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="HelghastFighterBase">
+    <defName>HGempire_Fighter_AdvLMG</defName>
+    <label>LMG Trooper</label>
+	<nameMaker>NamerHelghastPersonM</nameMaker>
+	<nameMakerFemale>NamerHelghastPersonF</nameMakerFemale>
+	<combatPower>65</combatPower>
+	<weaponTags>
+      <li>HelghastHeavy</li>
+    </weaponTags>
+    <apparelTags>
+      <li>Helghanshocksexy</li>
+	  <li>HelghastAssaultII</li>
+    </apparelTags>
+    <weaponMoney>395~825</weaponMoney>
+	<invNutrition>1</invNutrition>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>4~6</range>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <range>3~5</range>
+      </li>
+    </skills>
+    <initialResistanceRange>25~30</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Helghast>1</Helghast>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="HelghastFighterBase">
+    <defName>HGempire_Fighter_AdvAssault</defName>
+    <label>Advanced Assault</label>
+	<nameMaker>NamerHelghastPersonM</nameMaker>
+	<nameMakerFemale>NamerHelghastPersonF</nameMakerFemale>
+	<combatPower>65</combatPower>
+	<weaponTags>
+      <li>HelghastMain</li>
+    </weaponTags>
+    <apparelTags>
+      <li>Helghanshocksexy</li>
+	  <li>HelghastAssaultII</li>
+	  <li>HelghastGrenAlt</li>
+    </apparelTags>
+    <weaponMoney>395~825</weaponMoney>
+	<invNutrition>1</invNutrition>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>4~6</range>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <range>3~5</range>
+      </li>
+    </skills>
+    <initialResistanceRange>25~30</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Helghast>1</Helghast>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="HelghastFighterBase">
+    <defName>HGempire_Fighter_Sniper</defName>
+    <label>Sniper</label>
+	<nameMaker>NamerHelghastPersonM</nameMaker>
+	<nameMakerFemale>NamerHelghastPersonF</nameMakerFemale>
+	<combatPower>70</combatPower>
+	<weaponTags>
+      <li>HelghastSniper</li>
+    </weaponTags>
+    <apparelTags>
+      <li>HelghastSniper</li>
+    </apparelTags>
+    <weaponMoney>675~850</weaponMoney>
+	<invNutrition>1</invNutrition>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>5~7</range>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <range>3~4</range>
+      </li>
+    </skills>
+    <initialResistanceRange>25~30</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Helghast>1</Helghast>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="HelghastFighterBase">
+    <defName>HGempire_Fighter_HeaviestHeavy</defName>
+    <label>Heavy Trooper</label>
+	<nameMaker>NamerHelghastPersonM</nameMaker>
+	<nameMakerFemale>NamerHelghastPersonF</nameMakerFemale>
+	<combatPower>95</combatPower>
+	<weaponTags>
+      <li>HelghastHeavyHEAVY</li>
+    </weaponTags>
+    <apparelTags>
+      <li>HelghastHeaviestHeavy</li>
+    </apparelTags>
+	<apparelRequired>
+      <li>Apparel_HG_HeaviestHeavy</li>
+    </apparelRequired>
+    <weaponMoney>1500~2525</weaponMoney>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>4~6</range>
+      </li>
+	  <li>
+        <skill>Melee</skill>
+        <range>4~5</range>
+      </li>
+    </skills>
+    <initialResistanceRange>40~50</initialResistanceRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Helghast>1</Helghast>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+    <!--===================== Helghast Factions =========================-->
+
+  <FactionDef ParentName="FactionBase" Name="HelghastFactionBase" Abstract="True">
+    <pawnSingular>citizen</pawnSingular>
+    <pawnsPlural>citizens</pawnsPlural>
+    <categoryTag>Citizen</categoryTag>
+    <listOrderPriority>200</listOrderPriority>
+    <settlementGenerationWeight>0.5</settlementGenerationWeight>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <canSiege>true</canSiege>
+    <canStageAttacks>true</canStageAttacks>
+    <leaderTitle>high admiral</leaderTitle>
+    <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <techLevel>Industrial</techLevel>
+    <factionNameMaker>NamerHelghastJuntaFaction</factionNameMaker>
+    <settlementNameMaker>NamerHelghastJuntaSettlement</settlementNameMaker>
+    <allowedCultures><li>HelghanCul</li></allowedCultures>
+	<colorSpectrum>
+      <li>(95, 95, 95)</li>
+    </colorSpectrum>
+    <permanentEnemy>true</permanentEnemy>
+	<requiredMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Supremacist</li>
+	  <li MayRequire="Ludeon.RimWorld.Ideology">Raider</li>
+    </requiredMemes>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>150</configurationListOrderPriority>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Structure_Animist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+    </disallowedMemes>
+    <structureMemeWeights>
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">1</Structure_Ideological>
+    </structureMemeWeights>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Helghast>1</Helghast>
+      </xenotypeChances>
+    </xenotypeSet>
+    <backstoryFilters>
+      <li>
+        <categories>
+		    <li>Outlander</li>
+        </categories>
+        <commonality>1</commonality>
+      </li>
+    </backstoryFilters>
+    <allowedArrivalTemperatureRange>-30~45</allowedArrivalTemperatureRange>
+    <raidLootMaker>OutlanderRaidLootMaker</raidLootMaker>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(70, 50)</li>
+        <li>(700, 100)</li>
+        <li>(1300, 150)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+	  <li>
+        <!-- Because the game forced me to make it so the leader "can" show in a raid -->
+        <kindDef>Combat</kindDef>
+        <options>
+		 <HGempire_Fighter_Conscript>5</HGempire_Fighter_Conscript>
+		 <HGempire_Fighter_Assault>10</HGempire_Fighter_Assault>
+		 <HGempire_Fighter_Hig>10</HGempire_Fighter_Hig>
+		 <HGempire_Fighter_Fatty>5</HGempire_Fighter_Fatty>
+		 <HGempire_Fighter_VetConscript>5</HGempire_Fighter_VetConscript>
+		 <HGempire_Fighter_Sniper>3</HGempire_Fighter_Sniper>
+		 <HGempire_Fighter_FactionLeader>5</HGempire_Fighter_FactionLeader>
+        </options>
+      </li>
+      <li>
+        <!-- Conscript Trial -->
+        <kindDef>Combat</kindDef>
+        <commonality>50</commonality>
+        <disallowedStrategies>
+          <li>Siege</li>
+        </disallowedStrategies>
+        <options>
+		 <HGempire_Fighter_Slave>40</HGempire_Fighter_Slave>
+		 <HGempire_Fighter_Conscript>20</HGempire_Fighter_Conscript>
+		 <HGempire_Fighter_Hig>5</HGempire_Fighter_Hig>
+        </options>
+      </li>
+	  <li>
+        <!-- Scouting Party -->
+        <kindDef>Combat</kindDef>
+        <commonality>50</commonality>
+		<disallowedStrategies>
+          <li>Siege</li>
+        </disallowedStrategies>
+        <options>
+		 <HGempire_Fighter_Conscript>5</HGempire_Fighter_Conscript>
+		 <HGempire_Fighter_Assault>10</HGempire_Fighter_Assault>
+		 <HGempire_Fighter_Hig>5</HGempire_Fighter_Hig>
+		 <HGempire_Fighter_Shocktrooper>15</HGempire_Fighter_Shocktrooper>
+        </options>
+      </li>
+      <li>
+        <!-- Raid Force -->
+        <kindDef>Combat</kindDef>
+        <commonality>75</commonality>
+        <options>
+		 <HGempire_Fighter_AdvLMG>5</HGempire_Fighter_AdvLMG>
+		 <HGempire_Fighter_Shocktrooper>5</HGempire_Fighter_Shocktrooper>
+		 <HGempire_Fighter_Conscript>10</HGempire_Fighter_Conscript>
+		 <HGempire_Fighter_Assault>15</HGempire_Fighter_Assault>
+		 <HGempire_Fighter_Hig>15</HGempire_Fighter_Hig>
+        </options>
+      </li>
+	  <li>
+        <!-- Big Raid Force -->
+        <kindDef>Combat</kindDef>
+        <commonality>25</commonality>
+        <options>
+		 <HGempire_Fighter_AdvLMG>5</HGempire_Fighter_AdvLMG>
+		 <HGempire_Fighter_Conscript>5</HGempire_Fighter_Conscript>
+		 <HGempire_Fighter_Assault>7</HGempire_Fighter_Assault>
+		 <HGempire_Fighter_Hig>7</HGempire_Fighter_Hig>
+		 <HGempire_Fighter_Fatty>2</HGempire_Fighter_Fatty>
+		 <HGempire_Fighter_VetConscript>3</HGempire_Fighter_VetConscript>
+		 <HGempire_Fighter_Sniper>1</HGempire_Fighter_Sniper>
+        </options>
+      </li>
+	  <li>
+        <!-- Invasion Force -->
+        <kindDef>Combat</kindDef>
+        <commonality>15</commonality>
+        <options>
+		 <HGempire_Fighter_AdvAssault>6</HGempire_Fighter_AdvAssault>
+		 <HGempire_Fighter_Hig>12</HGempire_Fighter_Hig>
+		 <HGempire_Fighter_Fatty>6</HGempire_Fighter_Fatty>
+		 <HGempire_Fighter_ShockSexy>8</HGempire_Fighter_ShockSexy>
+		 <HGempire_Fighter_VetConscript>6</HGempire_Fighter_VetConscript>
+		 <HGempire_Fighter_Sniper>4</HGempire_Fighter_Sniper>
+		 <HGCorp_Fighter_Space_Assault>1</HGCorp_Fighter_Space_Assault>
+		 <HGempire_Fighter_HeaviestHeavy>1</HGempire_Fighter_HeaviestHeavy>
+        </options>
+      </li>
+      <li>
+        <!-- Helghast Base -->
+        <kindDef>Settlement</kindDef>
+        <options>
+		 <HGempire_Fighter_Hig>15</HGempire_Fighter_Hig>
+		 <HGempire_Fighter_VetConscript>7</HGempire_Fighter_VetConscript>
+		 <HGempire_Fighter_Fatty>5</HGempire_Fighter_Fatty>
+		 <HGempire_Fighter_Sniper>5</HGempire_Fighter_Sniper>
+        </options>
+      </li>
+    </pawnGroupMakers>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+  </FactionDef>
+  
+  <FactionDef ParentName="HelghastFactionBase">
+    <defName>HelghastJuntaFaction</defName>
+    <label>Helghan Junta</label>
+    <description>Perhaps the most common form of Helghan successor state, this group of Helghast militants have banded around one or more charismatic military or political figures. These rump states exist to further the ambitions of their leadership, assaulting rimworlds, bringing years of experience to bear on local populations. Aside from a few extreme examples, most of these regimes are willing to interact or treat with other xenotypes under certain circumstances, especially as tributaries, satrapies, or protectorates. Even though any one of these militant factions is a far cry from the former majesty of the Helghan armed forces, each of these miniature empires has a real shot at becoming a legitimate successor state to the Helghan regime. Many would be autarchs have risen from these. At their most restrained, regimes like these seek to demilitarize and rule over other factions on their given world to establish safe territory for Helghast refugee settlement and the establishment of megacorps. At their worst, they are genocidal warmongers hell-bent on blood and death.</description>
+    <factionIconPath>UI/Icons/HelgFaction_Fist</factionIconPath>
+  </FactionDef>
+
+</Defs>
