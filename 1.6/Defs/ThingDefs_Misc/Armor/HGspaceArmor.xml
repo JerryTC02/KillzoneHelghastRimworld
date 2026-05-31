@@ -80,6 +80,7 @@
       <layers>
         <li>Middle</li>
 		<li>Shell</li>
+		<li>Overhead</li>
       </layers>
     </apparel>
 	    <comps>
@@ -197,6 +198,7 @@
       <layers>
         <li>Middle</li>
 		<li>Shell</li>
+		<li>Overhead</li>
       </layers>
     </apparel>
   </ThingDef>

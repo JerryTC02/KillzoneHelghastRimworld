@@ -41,6 +41,9 @@
           <MarketValue>300</MarketValue>
           <Mass>0.2</Mass>
         </statBases>
+	    <thingCategories>
+         <li>ApparelMisc</li>
+        </thingCategories>
 		<costList>
          <Cloth>40</Cloth>
          <Steel>70</Steel>
